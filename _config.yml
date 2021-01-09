@@ -26,6 +26,7 @@ plugins:
   - jekyll-paginate
   - jekyll-include-cache
   - jekyll-archives
+  - jekyll-gist
 
 title: Knowlats.dev
 email: contact@knowlats.dev
@@ -39,7 +40,7 @@ github_username:  knowlats-dot-dev
 repository: knowlats-dot-dev/website
 author:
   name     : "Knowlats.dev"
-  avatar   : "/assets/images/logo.png"
+  avatar   : "/assets/image/logo.png"
   bio      : "Share everything about backend web development. Coding in JavaScript and Java."
   location : "Bangkok, Thailand"
   links:

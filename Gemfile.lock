@@ -95,6 +95,7 @@ DEPENDENCIES
   jekyll (~> 4.2.0)
   jekyll-archives
   jekyll-feed (~> 0.12)
+  jekyll-gist
   jekyll-include-cache
   jekyll-paginate
   minimal-mistakes-jekyll
