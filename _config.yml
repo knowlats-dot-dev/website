@@ -18,21 +18,73 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Your awesome title
-email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
-
-# Build settings
 theme: minimal-mistakes-jekyll
+minimal_mistakes_skin: dirt
+
 plugins:
   - jekyll-feed
+  - jekyll-paginate
+  - jekyll-include-cache
+  - jekyll-archives
+
+title: Knowlats.dev
+email: contact@knowlats.dev
+locale: en-US
+timezone: Asia/Bangkok
+description: >-
+  Share everything about backend web development. Coding in JavaScript and Java.
+baseurl: ""
+url: knowlats.dev
+github_username:  knowlats-dot-dev
+repository: knowlats-dot-dev/website
+author:
+  name     : "Knowlats.dev"
+  avatar   : "/assets/images/logo.png"
+  bio      : "Share everything about backend web development. Coding in JavaScript and Java."
+  location : "Bangkok, Thailand"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/knowlats-dot-dev"
+defaults:
+  - scope:
+    # _posts
+      path: ""
+      type: posts
+    values:
+      layout: single
+      show_date: true
+      read_time: true
+      comments: false
+      share: true
+      related: true
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+category_archive:
+  type: jekyll-archives
+  path: /category/
+tag_archive:
+  type: jekyll-archives
+  path: /tag/
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive-taxonomy
+    tag: archive-taxonomy
+  permalinks:
+    category: /category/:name/
+    tag: /tag/:name/
+paginate: 10
+paginate_path: /page/page:num/
+permalink: /post/:title/
+search: true
+title_separator: "-"
 
 # Exclude from processing.
 # The following items will not be processed, by default.
