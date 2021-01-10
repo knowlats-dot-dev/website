@@ -1,13 +1,17 @@
 ---
 layout: single
-title:  "จัดการ Project หลายตัวใน Repository เดียวอย่างง่าย ๆ ด้วย Lerna"
+title:  "จัดการ Project ใน Monorepo อย่างง่าย ๆ ด้วย Lerna"
 excerpt: >-
   มารู้จัก Lerna เครื่องมือที่จะช่วยให้การจัดการ Multi-package Repository
 date:   2020-04-08 21:00:00 +0700
-categories: node.js javascript monorepo tools lerna
+categories: javascript useful-tools
+tags: node.js javascript monorepo tools lerna
+toc: true
 ---
 
-![](https://images.unsplash.com/photo-1529981188441-8a2e6fe30103?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80)*Photo by [Jack B](https://unsplash.com/@nervum) on [Unsplash](https://unsplash.com/)*
+![](https://images.unsplash.com/photo-1529981188441-8a2e6fe30103?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80)
+
+*Photo by [Jack B](https://unsplash.com/@nervum) on [Unsplash](https://unsplash.com/)*
 
 Project ของ NPM (Node Package Manager) ไม่ว่าจะเป็น Project ที่สร้างขึ้นมาด้วยคำสั่ง `npm init Project` ที่เป็น React, Vue, หรืออะไรที่เป็น JavaScript ที่มีไฟล์ package.json จะถือว่าเป็น 1 Project
 
@@ -288,7 +292,9 @@ Lerna จะติดตั้ง `axios` ลงใน Project ที่เล�
 
 ข้อแตกต่างคำสั่งที่ไม่มี `--parallel` และคำสั่งที่มี `--parallel` จะเห็นได้จาก Console ดังตัวอย่าง
 
-![](/assets/image/post/intro-to-lerna/02.png)*รูปเปรียบเทียบผลลัพธ์ของคำสั่งที่ไม่มี `-- parallel` และมี `--parallel`*
+![](/assets/image/post/intro-to-lerna/02.png)
+
+*รูปเปรียบเทียบผลลัพธ์ของคำสั่งที่ไม่มี `-- parallel` และมี `--parallel`*
 
 `--parallel` จะรันคำสั่งในทุก Project ที่เลือกทันที โดยไม่สนใจเรื่องข้อจำกัดของ CPU หากต้องการให้ Lerna รันโดยคำนึงถึงเรื่องข้อจำกัดของ CPU แต่ยังต้องการให้แยก Logging ให้เปลี่ยนจาก `--parallel` เป็น `--stream` แทน
 
@@ -367,7 +373,9 @@ Lerna จะติดตั้ง `axios` ลงใน Project ที่เล�
 
 ## เสริม: ใช้ Yarn Workspace ร่วมกับ Lerna เพื่อชีวิตที่ดีกว่า
 
-![](https://images.unsplash.com/photo-1553585988-4319f2e6f542?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=889&q=80)*Photo by [Les Triconautes](https://unsplash.com/@triconautes) on [Unsplash](https://unsplash.com)*
+![](https://images.unsplash.com/photo-1553585988-4319f2e6f542?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=889&q=80)
+
+*Photo by [Les Triconautes](https://unsplash.com/@triconautes) on [Unsplash](https://unsplash.com)*
 
 หากเริ่มใช้ Lerna ใน Project แล้ว ผู้เขียนขอแนะนำให้ใช้ Yarn Workspace ร่วมด้วย เพราะมันช่วยอำนวยความสะดวกให้เรามากกว่าการใช้ Lerna ล้วน ๆ ตั้งแต่ต้นจนจบกระบวนการของการพัฒนาเลยทีเดียว
 
