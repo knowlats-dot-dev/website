@@ -73,10 +73,10 @@ defaults:
       layout: single
 category_archive:
   type: jekyll-archives
-  path: /category/
+  path: /categories/
 tag_archive:
   type: jekyll-archives
-  path: /tag/
+  path: /tags/
 jekyll-archives:
   enabled:
     - categories
@@ -85,11 +85,11 @@ jekyll-archives:
     category: archive-taxonomy
     tag: archive-taxonomy
   permalinks:
-    category: /category/:name/
-    tag: /tag/:name/
+    category: /categories/:name/
+    tag: /tags/:name/
 paginate: 10
-paginate_path: /page/page:num/
-permalink: /post/:title/
+paginate_path: /page:num/
+permalink: /:title/
 search: true
 title_separator: "-"
 
