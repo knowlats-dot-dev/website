@@ -1,6 +1,9 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Knowlats.dev Blog",
+    "short_name": "knowlats.dev",
+    "description": "Share everything about backend web development. Coding in JavaScript and Java.",
+    "homepage_url": "https://knowlats.dev",
+    "start_url": "/",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
