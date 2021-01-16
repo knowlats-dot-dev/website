@@ -35,7 +35,7 @@ timezone: Asia/Bangkok
 description: >-
   Share everything about backend web development. Coding in JavaScript and Java.
 baseurl: ""
-url: knowlats.dev
+url: https://knowlats.dev
 github_username:  knowlats-dot-dev
 repository: knowlats-dot-dev/website
 
