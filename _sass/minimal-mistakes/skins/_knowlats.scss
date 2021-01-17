@@ -2,17 +2,22 @@
    Knowlats skin
    ========================================================================== */
 
+$theme-primary-color: #f43d41;
+$theme-secondary-color: #f07678;
+
 /* Colors (Update from "dirt" skin) */
 $background-color: #f3f4f6 !default;
 $text-color: #1f2937 !default;
 $muted-text-color: #1f2937 !default;
 $primary-color: #343434 !default;
 $border-color: #d1d5dB !default;
-$footer-background-color: #f07678 !default;
+$footer-background-color: $theme-secondary-color !default;
+$footer-social-icons: $theme-primary-color !default;
 $link-color: #343434 !default;
 $masthead-link-color: $text-color !default;
 $masthead-link-color-hover: $text-color !default;
 $navicon-link-color-hover: mix(#fff, $text-color, 80%) !default;
+
 
 /* syntax highlighting (base16) from "sunrise" skin */
 $base00: #1d1f21 !default;
