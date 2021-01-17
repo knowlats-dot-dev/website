@@ -39,6 +39,7 @@ baseurl: ""
 url: https://knowlats.dev
 github_username:  knowlats-dot-dev
 repository: knowlats-dot-dev/website
+og_image: /assets/image/logo.png
 
 author:
   name     : "Knowlats.dev"
@@ -88,11 +89,13 @@ jekyll-archives:
   permalinks:
     category: /categories/:name/
     tag: /tags/:name/
+
 paginate: 10
 paginate_path: /page:num/
 permalink: /:title/
 search: true
 title_separator: "-"
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
