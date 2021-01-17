@@ -7,7 +7,7 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "~> 4.2.0"
+gem "jekyll", github: "jekyll/jekyll"
 # Current Theme
 gem "minimal-mistakes-jekyll"
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
@@ -15,7 +15,7 @@ gem "minimal-mistakes-jekyll"
 # gem "github-pages", group: :jekyll_plugins
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.12"
+  gem "jekyll-feed"
   gem "jekyll-sitemap"
   gem 'jekyll-paginate'
   gem 'jekyll-archives'
