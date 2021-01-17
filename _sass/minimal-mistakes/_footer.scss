@@ -81,5 +81,10 @@
     a {
       white-space: nowrap;
     }
+
+    .fa-rss,
+    .fa-rss-square {
+      color: $footer-social-icons;
+    }
   }
 }
