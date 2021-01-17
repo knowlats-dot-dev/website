@@ -14,7 +14,7 @@ canonical_url: https://medium.com/@icegotchafantasoxy/introduction-to-lerna-tool
 toc: true
 ---
 
-Project ของ NPM (Node Package Manager) ไม่ว่าจะเป็น Project ที่สร้างขึ้นมาด้วยคำสั่ง `npm init Project` ที่เป็น React, Vue, หรืออะไรที่เป็น JavaScript ที่มีไฟล์ package.json จะถือว่าเป็น 1 Project
+Project ของ NPM (Node Package Manager) ไม่ว่าจะเป็น Project ที่สร้างขึ้นมาด้วยคำสั่ง `npm init` Project ที่เป็น React, Vue, หรืออะไรที่เป็น JavaScript ที่มีไฟล์ package.json จะถือว่าเป็น 1 Project
 
 โดยปกติแล้ว เรามักจะทำงานกับ Project 1 ตัวต่อกับ 1 Git Repository เท่านั้น แต่ทว่าในโลกความจริง เราสามารถทำงานหลาย Project ต่อ 1 Git Repository ได้ด้วย เราเรียก Repository นั้นว่า **“Multi-package Repository”** หรือ **“Monorepo”**
 

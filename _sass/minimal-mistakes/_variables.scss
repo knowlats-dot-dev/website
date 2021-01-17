@@ -12,14 +12,19 @@ $doc-font-size: 16 !default;
 $paragraph-indent: false !default; // true, false (default)
 $indent-var: 1.3em !default;
 
+/* web typefaces */
+$bai-jamjuree: "Bai Jamjuree";
+$fira-code: "Fira Code", $bai-jamjuree;
+
 /* system typefaces */
 $serif: Georgia, Times, serif !default;
 $sans-serif: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
   "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
-$monospace: Monaco, Consolas, "Lucida Console", monospace !default;
+$monospace: $fira-code, Monaco, Consolas, "Lucida Console", monospace !default;
 
 /* sans serif typefaces */
 $sans-serif-narrow: $sans-serif !default;
+$bai-jamjuree-narrow: $bai-jamjuree, $sans-serif-narrow !default;
 $helvetica: Helvetica, "Helvetica Neue", Arial, sans-serif !default;
 
 /* serif typefaces */
@@ -28,10 +33,6 @@ $times: Times, serif !default;
 $bodoni: "Bodoni MT", serif !default;
 $calisto: "Calisto MT", serif !default;
 $garamond: Garamond, serif !default;
-
-/* custom typefaces */
-$bai-jamjuree: "Bai Jamjuree";
-$bai-jamjuree-narrow: $bai-jamjuree, $sans-serif-narrow !default;
 
 $global-font-family: $bai-jamjuree, $sans-serif !default;
 $header-font-family: $bai-jamjuree, $sans-serif !default;
