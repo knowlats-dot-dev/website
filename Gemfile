@@ -7,7 +7,7 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", github: "jekyll/jekyll"
+gem "jekyll", "~> 4.2.0"
 
 # Current Theme
 gem "minimal-mistakes-jekyll"
