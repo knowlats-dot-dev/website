@@ -2,18 +2,19 @@
 layout: single
 title:  "จัดการ Project ใน Monorepo อย่างง่าย ๆ ด้วย Lerna"
 excerpt: >-
-  มารู้จัก Lerna เครื่องมือที่จะช่วยให้การจัดการ Multi-package Repository
+  มารู้จัก Lerna เครื่องมือที่จะช่วยให้การจัดการ Multi-package Repository ทำได้ง่ายขึ้น
+header:
+    overlay_image: /assets/image/post/intro-to-lerna/heading.jpg
+    overlay_filter: 0.5
+    caption: Photo by [Jack B](https://unsplash.com/@nervum) on [Unsplash](https://unsplash.com/)
 date:   2020-04-08 21:00:00 +0700
 categories: javascript useful-tools
 tags: node.js javascript monorepo tools lerna
+canonical_url: https://medium.com/@icegotchafantasoxy/introduction-to-lerna-tool-for-monorepos-7a3d6fe4d65c
 toc: true
 ---
 
-![](https://images.unsplash.com/photo-1529981188441-8a2e6fe30103?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80)
-
-*Photo by [Jack B](https://unsplash.com/@nervum) on [Unsplash](https://unsplash.com/)*
-
-Project ของ NPM (Node Package Manager) ไม่ว่าจะเป็น Project ที่สร้างขึ้นมาด้วยคำสั่ง `npm init Project` ที่เป็น React, Vue, หรืออะไรที่เป็น JavaScript ที่มีไฟล์ package.json จะถือว่าเป็น 1 Project
+Project ของ NPM (Node Package Manager) ไม่ว่าจะเป็น Project ที่สร้างขึ้นมาด้วยคำสั่ง `npm init` Project ที่เป็น React, Vue, หรืออะไรที่เป็น JavaScript ที่มีไฟล์ package.json จะถือว่าเป็น 1 Project
 
 โดยปกติแล้ว เรามักจะทำงานกับ Project 1 ตัวต่อกับ 1 Git Repository เท่านั้น แต่ทว่าในโลกความจริง เราสามารถทำงานหลาย Project ต่อ 1 Git Repository ได้ด้วย เราเรียก Repository นั้นว่า **“Multi-package Repository”** หรือ **“Monorepo”**
 
@@ -373,7 +374,7 @@ Lerna จะติดตั้ง `axios` ลงใน Project ที่เล�
 
 ## เสริม: ใช้ Yarn Workspace ร่วมกับ Lerna เพื่อชีวิตที่ดีกว่า
 
-![](https://images.unsplash.com/photo-1553585988-4319f2e6f542?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=889&q=80)
+![](/assets/image/post/intro-to-lerna/yarn.jpg)
 
 *Photo by [Les Triconautes](https://unsplash.com/@triconautes) on [Unsplash](https://unsplash.com)*
 
@@ -449,6 +450,6 @@ Feature นี้จะให้โฟลเดอร์ `node_modules` จา�
 
 พบกันใหม่ในบล็อกหน้า สวัสดีค่ะ
 
-## Update History
+---
 
-* ***09/04/2020*** เพิ่มข้อมูลประเด็นเรื่องการลบ Package ใน Yarn Workspace
+*This article was originally published at [Medium.com](https://medium.com/@icegotchafantasoxy/introduction-to-lerna-tool-for-monorepos-7a3d6fe4d65c)*

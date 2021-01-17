@@ -98,6 +98,7 @@ DEPENDENCIES
   jekyll-gist
   jekyll-include-cache
   jekyll-paginate
+  jekyll-sitemap
   minimal-mistakes-jekyll
   tzinfo (~> 1.2)
   tzinfo-data
