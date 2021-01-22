@@ -22,7 +22,6 @@ theme: minimal-mistakes-jekyll
 minimal_mistakes_skin: knowlats
 
 plugins:
-  - jekyll-commonmark
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-paginate
@@ -117,10 +116,3 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-
-# Markdown
-
-markdown: CommonMark
-commonmark:
-  options: ["SMART", "FOOTNOTES"]
-  extensions: ["strikethrough", "autolink", "table"]
