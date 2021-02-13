@@ -111,7 +111,9 @@
   {% endif %}
 {% endif %}
 
-<link rel="canonical" href="{{ canonical_url }}">
+{% unless canonical_url contains site.url %}
+  <link rel="canonical" href="{{ canonical_url }}">
+{% endunless %}
 
 {% if paginator.previous_page %}
   <link rel="prev" href="{{ paginator.previous_page_path | absolute_url }}">
