@@ -19,9 +19,9 @@ toc: true
 
 **SchemaSpy** เป็นโปรแกรมประเภท Command Line เขียนด้วยภาษา Java มันจะช่วยวิเคราะห์ เก็บข้อมูลของฐานข้อมูลของเรา และสร้างเอกสารออกมาเป็นเว็บที่สวยงาม ภายในเอกสารนอกจากจะมีข้อมูลเกี่ยวกับตารางและส่วนอื่น ๆ ที่จำเป็นแล้ว ยังมีแผนภาพ ER Diagram ให้เราอีกด้วย
 
-![http://schemaspy.org/img/example_page.png](http://schemaspy.org/img/example_page.png)
+![รูปแสดงตัวอย่างเอกสารที่สร้างขึ้นจาก SchemaSpy](/assets/image/post/how-to-use-schemaspy/00.png)
 
-รูปภาพที่แสดงอยู่นี้เป็นตัวอย่างเอกสาร Database ที่ SchemaSpy สร้างขึ้น สามารถดูได้ที่ [http://schemaspy.org/sample/index.html](http://schemaspy.org/sample/index.html)
+รูปภาพที่แสดงอยู่นี้คือตัวอย่างเอกสาร Database ที่ SchemaSpy สร้างขึ้น สามารถดูได้ที่ [http://schemaspy.org/sample/index.html](http://schemaspy.org/sample/index.html)
 
 # ก่อนที่จะใช้งาน SchemaSpy
 
