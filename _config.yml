@@ -60,10 +60,7 @@ defaults:
       author_profile: true
       show_date: true
       read_time: true
-      comments:
-        providers: "facebook"
-        facebook:
-          appid: 250592803505884
+      comments: true
       share: true
       related: true
   - scope:
@@ -72,6 +69,10 @@ defaults:
     values:
       layout: single
 search: true
+comments:
+  providers: "facebook"
+  facebook:
+    appid: 250592803505884
 paginate: 10
 paginate_path: /page:num/
 category_archive:
