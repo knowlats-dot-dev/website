@@ -20,7 +20,6 @@
 
 theme: minimal-mistakes-jekyll
 minimal_mistakes_skin: knowlats
-
 plugins:
   - jekyll-feed
   - jekyll-sitemap
@@ -28,19 +27,18 @@ plugins:
   - jekyll-archives
   - jekyll-include-cache
   - jekyll-gist
-
 title: Knowlats.dev
+title_separator: "-"
 email: contact@knowlats.dev
 locale: en-US
 timezone: Asia/Bangkok
 description: >-
   Share everything about backend web development. Coding in JavaScript and Java.
-baseurl: ""
 url: https://knowlats.dev
+permalink: /:title/
+og_image: /assets/image/logo.png
 github_username:  knowlats-dot-dev
 repository: knowlats-dot-dev/website
-og_image: /assets/image/logo.png
-
 author:
   name     : "Knowlats.dev"
   avatar   : "/assets/image/logo.png"
@@ -53,10 +51,8 @@ author:
     - label: "Author's GitHub (Icegotcha)"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/icegotcha"
-
 defaults:
   - scope:
-    # _posts
       path: ""
       type: posts
     values:
@@ -64,15 +60,20 @@ defaults:
       author_profile: true
       show_date: true
       read_time: true
-      comments: false
+      comments:
+        providers: "facebook"
+        facebook:
+          appid: 250592803505884
       share: true
       related: true
-  # _pages
   - scope:
       path: ""
       type: pages
     values:
       layout: single
+search: true
+paginate: 10
+paginate_path: /page:num/
 category_archive:
   type: jekyll-archives
   path: /categories/
@@ -89,12 +90,6 @@ jekyll-archives:
   permalinks:
     category: /categories/:name/
     tag: /tags/:name/
-
-paginate: 10
-paginate_path: /page:num/
-permalink: /:title/
-search: true
-title_separator: "-"
 
 
 # Exclude from processing.
