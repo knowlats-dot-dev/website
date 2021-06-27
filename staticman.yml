@@ -1,0 +1,20 @@
+comments:
+  branch: "main"
+  moderation: true
+  pullRequestBody: >-
+    Hey there, :laughing:\n\n
+    There's a new comment posted by \"{fields.name}\" from \"{options.title}\" :tada:\n\n---\n
+  commitMessage: "New comment by \"{fields.name}\" in post \"{options.title}\""
+  allowedFields: ["name", "email", "url", "message"]
+  requiredFields: ["name", "message"]
+  path: "_data/comments/{options.slug}"
+  filename: "com-{@timestamp}"
+  format: "yaml"
+  generatedFields:
+    date:
+      type: date
+      options:
+        format: "iso8601"
+  transforms:
+    email: "md5"
+  allowedOrigins: ["localhost", "knowlats.dev"]
