@@ -80,10 +80,14 @@ defaults:
       layout: single
 search: true
 comments:
-  provider  : "staticman_v2"
+  provider  : staticman_v2
   staticman:
-    branch    : "main"
-    endpoint  : https://https://knowlats-comments.herokuapp.com/v3/entry/github/
+    branch    : main
+    endpoint  : https://knowlats-comments.herokuapp.com/v3/entry/github/
+reCaptcha:
+  enabled: true
+  siteKey: 6LcdK14bAAAAANZN09Jupc-NqBkZyydTEn2bSjUu
+  secret: beYJ+knK02xjLRVzUTraJuBjGqZ1zP8H0TwRl8ich8QBe012ywhfq6EngOqIhQOuC06Iswov8/YVo31IaRDYIadXFKS2yPMEdYkdA9lmOFk6r305E4wccgJzhDYzoNkJqEd7JqzQyMyuUxYPtsHy0wvxqh7cjv7X/61TkKUWH9Onf+1f4a4sTMScAzVpMmZHS7Zy+D2/6BLwhtX9gpZi5ZXxXjJ40ync9rVJuOx4xM1XN+Zz5DIef/SZbzlrTs5WCOcgNAjKIXQdG8g7QHz7YTBFSgul3Zlb1c0maQDwaAINEckRMRBKB2Qk3cP1o5e/cMxxm/qz1o9Sb7r5w1bIEQ==
 
 # Jekyll plugin list
 #
