@@ -17,28 +17,38 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-
 theme: minimal-mistakes-jekyll
 minimal_mistakes_skin: knowlats
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-paginate
-  - jekyll-archives
-  - jekyll-include-cache
-  - jekyll-gist
 title: Knowlats.dev
 title_separator: "-"
+url: https://knowlats.dev
 email: contact@knowlats.dev
 locale: en-US
 timezone: Asia/Bangkok
 description: >-
   Share everything about backend web development. Coding in JavaScript and Java.
-url: https://knowlats.dev
-permalink: /:title/
-og_image: /assets/image/logo.png
 github_username:  knowlats-dot-dev
 repository: knowlats-dot-dev/website
+og_image: /assets/image/logo.png
+permalink: /:title/
+paginate: 10
+paginate_path: /page:num/
+category_archive:
+  type: jekyll-archives
+  path: /categories/
+tag_archive:
+  type: jekyll-archives
+  path: /tags/
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive-taxonomy
+    tag: archive-taxonomy
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
 author:
   name     : "Knowlats.dev"
   avatar   : "/assets/image/logo.png"
@@ -70,28 +80,20 @@ defaults:
       layout: single
 search: true
 comments:
-  providers: "facebook"
-  facebook:
-    appid: 250592803505884
-paginate: 10
-paginate_path: /page:num/
-category_archive:
-  type: jekyll-archives
-  path: /categories/
-tag_archive:
-  type: jekyll-archives
-  path: /tags/
-jekyll-archives:
-  enabled:
-    - categories
-    - tags
-  layouts:
-    category: archive-taxonomy
-    tag: archive-taxonomy
-  permalinks:
-    category: /categories/:name/
-    tag: /tags/:name/
+  provider  : "staticman_v2"
+  staticman:
+    branch    : "main"
+    endpoint  : https://https://knowlats-comments.herokuapp.com/v3/entry/github/
 
+# Jekyll plugin list
+#
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-archives
+  - jekyll-include-cache
+  - jekyll-gist
 
 # Exclude from processing.
 # The following items will not be processed, by default.
