@@ -79,6 +79,10 @@ defaults:
     values:
       layout: single
 search: true
+comments:
+  provider: "disqus"
+  disqus:
+    shortname: "knowlats"
 
 
 # Jekyll plugin list
