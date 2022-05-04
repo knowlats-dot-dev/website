@@ -1,8 +1,8 @@
 ---
 layout: single
-title:  บอกลา JavaScript เปลี่ยนมาใช้ Typescript
+title:  สวัสดี Typescript
 excerpt: >-
-  JavaScript มีปัญหาอะไร? Typescript ดีกว่ายังไง? จะใช้ยังไง? มี Type อะไรบ้าง? ไปดูกัน
+  Typescript ดียังไง? จะใช้ยังไง? มี Type อะไรบ้าง? ไปดูกัน
 header:
     overlay_image: /assets/image/post/say-hi-to-typescript/heading.jpg
     overlay_filter: 0.5
