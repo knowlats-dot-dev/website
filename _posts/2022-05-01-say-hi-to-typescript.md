@@ -7,7 +7,7 @@ header:
     overlay_image: /assets/image/post/say-hi-to-typescript/heading.jpg
     overlay_filter: 0.5
     caption: Photo by [Ilya Pavlov](https://unsplash.com/@ilyapavlov) on [Unsplash](https://unsplash.com/)
-date:   2021-05-01 12:00:00 +0700
+date:   2022-05-01 12:00:00 +0700
 categories: language
 tags: javascript typescript
 toc: true
