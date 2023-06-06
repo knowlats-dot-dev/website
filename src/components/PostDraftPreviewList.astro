@@ -1,0 +1,20 @@
+---
+import type { MarkdownInstance } from 'astro'
+import type { BlogFrontmatter } from '$/types'
+import PostDraftPreview from './PostDraftPreview.astro'
+
+interface Props {
+  posts: MarkdownInstance<BlogFrontmatter>[]
+}
+
+const { posts } = Astro.props
+---
+
+<section class="post-draft-preview__list">
+  {posts.map((post) => <PostDraftPreview post={post} />)}
+</section>
+<style>
+  .post-draft-preview__list {
+    @apply flex flex-col gap-12;
+  }
+</style>
