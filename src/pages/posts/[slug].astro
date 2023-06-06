@@ -1,0 +1,17 @@
+---
+import { getEntry } from 'astro:content'
+import PostLayout from '$/layouts/post.astro'
+
+const { slug } = Astro.params
+const entry = await getEntry('blog', slug!)
+
+if (typeof entry === 'undefined') {
+  return Astro.redirect('/404')
+}
+
+const { Content } = await entry.render()
+---
+
+<PostLayout content={entry.data}>
+  <Content />
+</PostLayout>
