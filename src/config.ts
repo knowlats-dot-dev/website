@@ -12,10 +12,6 @@ export const NAV_ITEMS: NavItems = {
   tags: {
     path: '/tags',
     title: 'tags'
-  },
-  about: {
-    path: '/about',
-    title: 'about'
   }
 }
 
