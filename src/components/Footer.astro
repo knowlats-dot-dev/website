@@ -1,0 +1,56 @@
+---
+import { SITE } from '$/config'
+import { getRandomFooterEmoji } from '$/utils'
+import GithubIcon from './icons/GithubIcon.astro'
+import RssIcon from './icons/RssIcon.astro'
+import ModeLabel from './ModeLabel.svelte'
+---
+
+<footer class="footer">
+  <ul class="footer__social-link-list">
+    <li>
+      <a href="https://webring.wonderful.software#knowlats.dev" title="Webring">
+        <img alt="Webring" width="24" height="24" src="/assets/webring.svg" />
+      </a>
+    </li>
+    <li>
+      <a href={SITE.githubUrl} title={`${SITE.name}'s Github URL'`}>
+        <GithubIcon />
+      </a>
+    </li>
+    <li>
+      <a href="/rss.xml" title="RSS">
+        <RssIcon />
+      </a>
+    </li>
+  </ul>
+  <div class="footer__text">
+    &copy; {new Date().getFullYear()}
+    {SITE.name}
+    <br />
+    Made with {getRandomFooterEmoji()} by <a href="https://icegotcha.me"
+      >Icegotcha</a
+    >
+    using <a href="https://astro.build/">Astro</a> with <ModeLabel
+      client:load
+    /> custom theme based on
+    <a href="https://github.com/one-aalam/astro-ink">Ink</a>
+  </div>
+</footer>
+<style>
+  a {
+    @apply underline;
+  }
+
+  .footer {
+    @apply py-6 w-full border-t flex flex-col items-center;
+  }
+
+  .footer__text {
+    @apply text-center;
+  }
+
+  .footer__social-link-list {
+    @apply flex gap-3 text-gray-500;
+  }
+</style>

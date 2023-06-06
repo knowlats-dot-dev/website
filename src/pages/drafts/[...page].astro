@@ -1,0 +1,53 @@
+---
+export const prerender = true
+
+import type { InferGetStaticPropsType, MarkdownInstance } from 'astro'
+import type { BlogFrontmatter } from '$/types'
+import DefaultPageLayout from '$/layouts/default.astro'
+import PostDraftPreviewList from '$/components/PostDraftPreviewList.astro'
+import Paginator from '$/components/Paginator.astro'
+import { SITE, PAGE_SIZE } from '$/config'
+
+let title = 'Drafts'
+let description =
+  "You're viewing a list of unpublished articles on the site. Accuracy or correctness isn't guranteed..."
+
+export async function getStaticPaths({ paginate, rss }) {
+  let allPosts: MarkdownInstance<BlogFrontmatter>[] = []
+  try {
+    allPosts = await Astro.glob<BlogFrontmatter>('../../drafts/*.md')
+  } catch (error) {
+    console.log(
+      'No draft posts found while generating the index page for the draft pages'
+    )
+  }
+  const sortedPosts = allPosts.sort(
+    (a, b) =>
+      new Date(b.frontmatter.date).getTime() -
+      new Date(a.frontmatter.date).getTime()
+  )
+
+  return paginate(sortedPosts, {
+    pageSize: PAGE_SIZE
+  })
+}
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>
+
+const { page } = Astro.props
+---
+
+<DefaultPageLayout content={{ title, description }}>
+  {
+    SITE.listDrafts ? (
+      // @ts-ignore
+      <PostDraftPreviewList posts={page.data} />
+    ) : (
+      <p class="text-gray-700 dark:text-gray-100">
+        Looks like you have landed on a unpublished posts page. Please find all
+        the published posts <a href="/posts">here</a>!
+      </p>
+    )
+  }
+  <Paginator page={page} />
+</DefaultPageLayout>
