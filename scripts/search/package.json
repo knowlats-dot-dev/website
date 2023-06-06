@@ -1,0 +1,12 @@
+{
+  "name": "search",
+  "version": "1.0.0",
+  "description": "",
+  "main": "prepare-index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node prepare-index.js"
+  },
+  "author": "Aftab Alam",
+  "license": "ISC"
+}
