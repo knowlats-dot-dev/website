@@ -35,6 +35,6 @@
   })
 </script>
 
-<button on:click={toggleTheme}>
+<button id='theme' aria-label='Theme' on:click={toggleTheme}>
   <slot theme={currTheme} />
 </button>

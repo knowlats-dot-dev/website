@@ -98,9 +98,6 @@ const { title = SITE.title, description, permalink, image } = Astro.props
 <!-- Sitemap -->
 <link rel="sitemap" href="/sitemap-index.xml" />
 
-<!-- SEO -->
-<meta name="robots" content="index, follow" />
-
 <!-- Open Graph Tags (Facebook) -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content={SITE.name} />
@@ -120,19 +117,19 @@ const { title = SITE.title, description, permalink, image } = Astro.props
 {permalink && <link rel="canonical" href={permalink} />}
 
 <script is:inline>
-  const theme = (() => {
-    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-      return localStorage.getItem('theme')
-    }
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return 'dark'
-    }
-    return 'light'
-  })()
-
-  if (theme === 'light') {
-    document.documentElement.classList.remove('dark')
-  } else {
-    document.documentElement.classList.add('dark')
+const theme = (() => {
+  if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+    return localStorage.getItem('theme')
   }
+  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    return 'dark'
+  }
+  return 'light'
+})()
+
+if (theme === 'light') {
+  document.documentElement.classList.remove('dark')
+} else {
+  document.documentElement.classList.add('dark')
+}
 </script>
