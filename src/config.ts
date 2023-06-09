@@ -23,7 +23,7 @@ export const SITE = {
   listDrafts: false,
   url: 'https://knowlats.dev',
   githubUrl: 'https://github.com/knowlats-dot-dev',
-  logo: '/assets/logo.svg',
+  logo: '/assets/image/logo.svg',
   image:
     'https://icegotcha-web-screenshot-capture.vercel.app/eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJrbm93bGF0cyIsInVybCI6Imh0dHBzOi8va25vd2xhdHMuZGV2IiwiZGV2aWNlU2NhbGVGYWN0b3IiOjEsIndhaXRVbnRpbCI6Im5ldHdvcmtpZGxlMCJ9.XGWFhyYIQbaSN2aqWMDFHaWDIlkO0rX30_9tpsXK8go3ZntWfROlAg8BzBwt-SLjNL-Q4l4pmQDGh_NgowasruQzxCi-w8WD49cLsV8MQn7NtnaXKnxvgoYk9c06q6jebGEiS13dFviriIgxGQeIam-CajSIoVvlRHBTO1QJGYTmk9YDt6SyTIoN44aB0kZiNrKsbU4ziPUZvBxOijG34P_MUBFGKDxAyi7oRmqMNxJi2nuM_879Jb4P1fXkJbVhZ3A3iTzpSfsxfQ953i4u3r6hbnno1aMDnBEDKST8cB8nn97S7J-oNr001Y22zk6F4tlpUiabVq7hXElrpwZ578bIL6smD8eHQefdqU_C1V2cSakCTflKLHRJti2l9ERTv29YA-VUJNf2jfzOURckuxdBzAT0-4tPBfO-br31mnbtWbEdWBoLl6X-DDJLUoOdtSOSZOpIcDOACszo1cm8iNID_f55usVFozmhcYf3Rv-nXbD6zugnVdgjkgBNtyh58cOQPvPbk82-G9af1Z6jBwZvoRm9poiGoI9E-YodU9jFQ4aW6R2mrH6BIjD_jMLu3LlZksLIUDKqsMFa33iDzn5fYnB_UxwrfzlgeHBEsNVZMDuPZZVOKnBnTEQvizQ2VJmkSHaSp_tCTwj4HcPsZ2kx4gMEOPiKbYHdfujPP_Y.png',
   // Optional, user/author settings
@@ -32,7 +32,7 @@ export const SITE = {
   // Author: Twitter handler
   authorTwitter: 'icegotcha_dev',
   // Author: Image external source
-  authorImage: '/assets/author.jpg',
+  authorImage: '/assets/image/author.jpg',
   // Author: Bio
   authorBio: 'Web developer'
 }
