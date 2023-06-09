@@ -98,9 +98,6 @@ const { title = SITE.title, description, permalink, image } = Astro.props
 <!-- Sitemap -->
 <link rel="sitemap" href="/sitemap-index.xml" />
 
-<!-- SEO -->
-{import.meta.env.PROD && <meta name="robots" content="index, follow" />}
-
 <!-- Open Graph Tags (Facebook) -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content={SITE.name} />
