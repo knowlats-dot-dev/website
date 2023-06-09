@@ -13,6 +13,6 @@
   }
 </script>
 
-<button on:click={showSearchDialog}>
+<button id='search' aria-label="Search" on:click={showSearchDialog}>
   <SearchIcon />
 </button>

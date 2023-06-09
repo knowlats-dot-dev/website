@@ -6,6 +6,6 @@
     isOpenMobileNavbar.set(!$isOpenMobileNavbar)
 </script>
 
-<button on:click={onClickMobileNavbarButton}>
+<button id='navbar-button' aria-label='Navbar' on:click={onClickMobileNavbarButton}>
   <HamburgerIcon active={$isOpenMobileNavbar} />
 </button>
