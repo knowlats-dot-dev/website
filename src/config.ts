@@ -23,16 +23,16 @@ export const SITE = {
   listDrafts: false,
   url: 'https://knowlats.dev',
   githubUrl: 'https://github.com/knowlats-dot-dev',
-  logo: '/assets/logo.svg',
+  logo: '/assets/image/logo.svg',
   image:
-    'https://icegotcha-web-screenshot-capture.vercel.app/eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJrbm93bGF0cyIsInVybCI6Imh0dHBzOi8va25vd2xhdHMuZGV2IiwiZGV2aWNlU2NhbGVGYWN0b3IiOjEsIndhaXRVbnRpbCI6Im5ldHdvcmtpZGxlMCJ9.XGWFhyYIQbaSN2aqWMDFHaWDIlkO0rX30_9tpsXK8go3ZntWfROlAg8BzBwt-SLjNL-Q4l4pmQDGh_NgowasruQzxCi-w8WD49cLsV8MQn7NtnaXKnxvgoYk9c06q6jebGEiS13dFviriIgxGQeIam-CajSIoVvlRHBTO1QJGYTmk9YDt6SyTIoN44aB0kZiNrKsbU4ziPUZvBxOijG34P_MUBFGKDxAyi7oRmqMNxJi2nuM_879Jb4P1fXkJbVhZ3A3iTzpSfsxfQ953i4u3r6hbnno1aMDnBEDKST8cB8nn97S7J-oNr001Y22zk6F4tlpUiabVq7hXElrpwZ578bIL6smD8eHQefdqU_C1V2cSakCTflKLHRJti2l9ERTv29YA-VUJNf2jfzOURckuxdBzAT0-4tPBfO-br31mnbtWbEdWBoLl6X-DDJLUoOdtSOSZOpIcDOACszo1cm8iNID_f55usVFozmhcYf3Rv-nXbD6zugnVdgjkgBNtyh58cOQPvPbk82-G9af1Z6jBwZvoRm9poiGoI9E-YodU9jFQ4aW6R2mrH6BIjD_jMLu3LlZksLIUDKqsMFa33iDzn5fYnB_UxwrfzlgeHBEsNVZMDuPZZVOKnBnTEQvizQ2VJmkSHaSp_tCTwj4HcPsZ2kx4gMEOPiKbYHdfujPP_Y.png',
+    'https://icegotcha-web-screenshot-capture.vercel.app/eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJrbm93bGF0cyIsInVybCI6Imh0dHBzOi8va25vd2xhdHMuZGV2IiwiZGV2aWNlU2NhbGVGYWN0b3IiOjEsIndhaXRVbnRpbCI6Im5ldHdvcmtpZGxlMCJ9.jRsnL6I6mHISw_NmdRHbAeXP-sOQZps7y5ikzGoXz0AkV_eSC1D9b7WU_qI4sZpewUt_3L28Q0VM8XIf2HRgLsFIsh0BYIGO9pW4Tm3hJxyaCQUSmuQAtZmLuxXnHkBXI8LM8jEb3eQ2U58xsmXA31FHpGLiGceF2SSg7TuOhnIfjfWdZMoTnMgsUaMd-IGNJGn4IfIshzD8cp6HSuchok7eGT6nYj4IEOsXvNh5kMqvxzPR_Aa35RoYlbWBJkssVBbCzPGyC0viqVRUbYogLR2pTXAnI4A3GbFoVWG_MaMUucwieBdC_YPwn4br2uOF4N3DXukCxf5c-JnsWJaVnBpcR-rkhb63T7VDTG-j7jbyph2kRBKLe9B3sdswszfufyi2GmhePpwBzw7F46HpH_7ynNtoxiacFqKEmgjIU7ZMX-MATlLF0Xbxksb0jEwQb3AVOb79cAsIOxf6oa-QshpD4gOrBeyoowhx70U-YHhcoQMxogPrg2x-8PhGTKVyhq6EwCAvzdEQNRvem2Fq9HxCvgYz5pspO17AUA7KS_Ec8Rcyi3pzKhO_CXNUmW8dWw0mjUd7_kBe7cAjNpkG4HHiKgxIxzWm04W2Xl6BAOeyRMdJn0s864wMCrHuN8Y3gcDChXXbJBd8qz2HMp3EbXudxKuauccPEILQIavObe4.png',
   // Optional, user/author settings
   // Author: name
   author: 'Icegotcha',
   // Author: Twitter handler
   authorTwitter: 'icegotcha_dev',
   // Author: Image external source
-  authorImage: '/assets/author.jpg',
+  authorImage: '/assets/image/author.jpg',
   // Author: Bio
   authorBio: 'Web developer'
 }
