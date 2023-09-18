@@ -58,14 +58,6 @@
     {
       "title": "drafts",
       "path": "[[workspace]]/src/drafts"
-    },
-  ],
-  "frontMatter.taxonomy.tags": [
-    "architecture",
-    "astro",
-    "front-end",
-    "jam-stack",
-    "spa"
-  ],
-  "frontMatter.taxonomy.categories": []
+    }
+  ]
 }
