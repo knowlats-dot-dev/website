@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap'
 import mdx from '@astrojs/mdx'
 import { defineConfig } from 'astro/config'
 import vercel from '@astrojs/vercel/serverless'
-
+import qwikdev from '@qwikdev/astro'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
@@ -21,12 +21,12 @@ const __dirname = dirname(__filename)
 // @ts-check
 
 // https://astro.build/config
-
 export default defineConfig(
   /** @type {import('astro').AstroUserConfig} */ {
     // root: '.',     // Where to resolve all URLs relative to. Useful if you have a monorepo project.
     // outDir: './dist',       // When running `astro build`, path to final static output
-    publicDir: './public', // A folder of static files Astro will copy to the root. Useful for favicons, images, and other files that don’t need processing.
+    publicDir: './public',
+    // A folder of static files Astro will copy to the root. Useful for favicons, images, and other files that don’t need processing.
     output: 'server',
     site: 'https://knowlats.dev',
     server: {
@@ -40,7 +40,8 @@ export default defineConfig(
           applyBaseStyles: false
         }
       }),
-      sitemap()
+      sitemap(),
+      qwikdev()
     ],
     vite: {
       plugins: [],
@@ -53,6 +54,7 @@ export default defineConfig(
         allowNodeBuiltins: true
       }
     },
-    adapter: vercel()
+    adapter: vercel(),
+    prefetch: true
   }
 )
