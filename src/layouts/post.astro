@@ -7,6 +7,7 @@ import {
   USE_AUTHOR_CARD,
   USE_SUBSCRIPTION
 } from '$/config'
+import { getLocalDate } from '$/utils'
 import MainLayout from '$/components/MainLayout.astro'
 import BaseHead from '$/components/BaseHead.astro'
 import Prose from '$/components/Prose.astro'
@@ -89,11 +90,7 @@ const AUTHOR_AVATAR = content.authorImage
           }
           {!AUTHOR_AVATAR ? ' | ' : ''}
           <span class="post__date"
-            >{
-              new Intl.DateTimeFormat('en-US', { dateStyle: 'full' }).format(
-                new Date(content.date)
-              )
-            }
+            >{getLocalDate(content.date).format('dddd D MMMM YYYY')}
             <!-- Post Stats? -->
             <!-- <Icon class="w-5 h-5 inline-block" pack="mdi" name="eye" />
             {stats.views} views |  -->

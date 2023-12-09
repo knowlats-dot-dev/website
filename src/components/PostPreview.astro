@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content'
-import { getMonthName } from '$/utils'
+import { getLocalDate } from '$/utils'
 
 interface Props {
   post: CollectionEntry<'blog'>
@@ -9,18 +9,16 @@ interface Props {
 const {
   post: { data: post, slug }
 } = Astro.props
+
+const postDate = getLocalDate(post.date)
 ---
 
 <div class="post-preview">
   <div class="sm:w-20 md:w-32">
     <div class="post-preview__date">
-      <span class="post-preview__date__day"
-        >{new Date(post.date).getDate()}</span
-      >
+      <span class="post-preview__date__day">{postDate.date()}</span>
       <span class="post-preview__date__month-n-year"
-        >{
-          `${getMonthName(post.date)} ${new Date(post.date).getFullYear()}`
-        }</span
+        >{postDate.format('MMM YYYY')}</span
       >
     </div>
   </div>

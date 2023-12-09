@@ -1,5 +1,6 @@
 ---
 import { SITE } from '$/config'
+import { getLocalDate } from '$/utils'
 import MainLayout from '$/components/MainLayout.astro'
 import BaseHead from '$/components/BaseHead.astro'
 import Prose from '$/components/Prose.astro'
@@ -42,11 +43,7 @@ const { content } = Astro.props
           rel="external">{content.author}</a
         > |
         <span class="post__date"
-          >{
-            new Intl.DateTimeFormat('en-US', { dateStyle: 'full' }).format(
-              new Date(content.date)
-            )
-          }</span
+          >{getLocalDate(content.date).format('dddd D MMMM YYYY')}</span
         >
       </h5>
     </div>
