@@ -21,7 +21,7 @@ export const get = () =>
     items: sortedPosts.map((item) => ({
       title: item.data.title,
       description: item.data.description,
-      link: `blog/${item.slug}`,
+      link: `posts/${item.slug}`,
       pubDate: new Date(item.data.date)
     })),
     // (optional) inject custom xml
