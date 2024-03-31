@@ -18,6 +18,7 @@
 </script>
 
 {#if $isSearchVisible}
+  <!-- svelte-ignore a11y-no-static-element-interactions -->
   <div
     class="modal__backdrop"
     on:click={dismissModal}
@@ -30,7 +31,7 @@
   </div>
 {/if}
 
-<style>
+<style le lang="postcss">
   .modal {
     @apply absolute top-0 left-0 w-full h-full grid justify-center content-center pointer-events-none;
   }
