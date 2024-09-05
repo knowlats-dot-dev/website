@@ -78,7 +78,7 @@
   <div class="note"><small>click anywhere outside to close</small></div>
 </div>
 
-<style le lang="postcss">
+<style lang="postcss">
   .search {
     @apply w-full relative bg-theme-primary  p-8  rounded-md shadow-lg;
   }
