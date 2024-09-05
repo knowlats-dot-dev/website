@@ -31,7 +31,7 @@
   </div>
 {/if}
 
-<style le lang="postcss">
+<style lang="postcss">
   .modal {
     @apply absolute top-0 left-0 w-full h-full grid justify-center content-center pointer-events-none;
   }
