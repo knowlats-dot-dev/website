@@ -55,7 +55,8 @@ module.exports = {
             a: {
               color: colors.dark.primary,
               '&:hover': {
-                color: colors.primary
+                backgroundColor: colors.accent.default,
+                textDecoration: 'none',
               }
             },
             code: {
@@ -75,6 +76,9 @@ module.exports = {
             },
             'blockquote > p::before, p::after': {
               color: colors.dark.primary
+            },
+            ul: {
+              listStyleType: 'disclosure-closed',
             },
             h1: {
               color: colors.dark.secondary
