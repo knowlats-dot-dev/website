@@ -12,14 +12,14 @@ module.exports = {
       dark: {
         primary: colors.red[300],
         secondary: colors.red[500],
-        'primary-background-color': colors.zinc[900]
+        'primary-background-color': colors.zinc[950]
       },
       accent: {
         gray: {
-          light: colors.gray[300],
-          dark: colors.gray[500]
+          light: colors.zinc[300],
+          dark: colors.zinc[500]
         },
-        default: colors.blue[700]
+        default: colors.zinc[800]
       }
     }
   }

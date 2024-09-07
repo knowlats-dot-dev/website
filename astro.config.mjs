@@ -1,12 +1,17 @@
 import path, { dirname } from 'path'
 import { fileURLToPath } from 'url'
+import { defineConfig } from 'astro/config'
+
 import svelte from '@astrojs/svelte'
 import tailwind from '@astrojs/tailwind'
 import sitemap from '@astrojs/sitemap'
 import mdx from '@astrojs/mdx'
-import { defineConfig } from 'astro/config'
 import vercel from '@astrojs/vercel/serverless'
 import qwikdev from '@qwikdev/astro'
+import remarkToc from 'remark-toc'
+import rehypeToc from 'rehype-toc'
+import rehypeExternalLinks from 'rehype-external-links'
+
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
@@ -53,6 +58,19 @@ export default defineConfig(
       optimizeDeps: {
         allowNodeBuiltins: true
       }
+    },
+    markdown: {
+      remarkPlugins: [remarkToc],
+      rehypePlugins: [
+        [rehypeToc, { heading: ['h1', 'h2', 'h3'], maxDepth: 3 }],
+        [
+          rehypeExternalLinks,
+          {
+            content: { type: 'text', value: ' 🔗' },
+            target: '_blank'
+          }
+        ]
+      ]
     },
     adapter: vercel(),
     prefetch: true
