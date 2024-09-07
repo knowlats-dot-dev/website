@@ -18,10 +18,7 @@ module.exports = {
         'max-height': 'max-height'
       },
       colors: {
-        theme: {
-          ...colors
-        },
-        'primary-background-color': 'var(--primary-background-color)'
+        theme: colors
       },
       typography: (theme) => ({
         dark: {
@@ -56,7 +53,7 @@ module.exports = {
               color: colors.dark.primary,
               '&:hover': {
                 backgroundColor: colors.accent.default,
-                textDecoration: 'none',
+                textDecoration: 'none'
               }
             },
             code: {
@@ -77,26 +74,23 @@ module.exports = {
             'blockquote > p::before, p::after': {
               color: colors.dark.primary
             },
-            ul: {
-              listStyleType: 'disclosure-closed',
-            },
             h1: {
-              color: colors.dark.secondary
+              color: colors.dark.secondary,
+              strong: {
+                color: theme('colors.black')
+              }
             },
             h2: {
-              color: colors.dark.secondary
+              color: colors.dark.secondary,
+              strong: {
+                color: theme('colors.black')
+              }
             },
             h3: {
-              color: colors.dark.secondary
-            },
-            h4: {
-              color: colors.dark.secondary
-            },
-            h5: {
-              color: colors.dark.secondary
-            },
-            h6: {
-              color: colors.dark.secondary
+              color: colors.dark.secondary,
+              strong: {
+                color: theme('colors.black')
+              }
             }
           }
         }
