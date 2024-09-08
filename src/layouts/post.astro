@@ -3,9 +3,8 @@ import type { CollectionEntry } from 'astro:content'
 import { Icon } from 'astro-icon'
 import {
   SITE,
-  USE_POST_IMG_OVERLAY,
   USE_AUTHOR_CARD,
-  USE_SUBSCRIPTION
+  USE_POST_IMG_OVERLAY,
 } from '$/config'
 import { getLocalDate } from '$/utils'
 import MainLayout from '$/components/MainLayout.astro'
@@ -153,30 +152,17 @@ const AUTHOR_AVATAR = content.authorImage
                 )}
                 <p class="author-card__bio">{SITE.authorBio}</p>
                 <br />
-                {USE_SUBSCRIPTION ? (
-                  <form action="" class="subscription-form">
-                    <label for="email" />
-                    <input
-                      type="email"
-                      name="email"
-                      class="flex-grow border-0 text-theme-accent-gray-dark"
-                      required="true"
-                    />
-                    <button type="submit">Subscribe</button>
-                  </form>
-                ) : (
-                  <a
-                    class="author-card__follow-btn button"
-                    target="_blank"
-                    href={`https://twitter.com/intent/follow?screen_name=${AUTHOR_TWITTER}`}>
-                    <Icon
-                      class="w-5 h-5 inline-block"
-                      pack="mdi"
-                      name="twitter"
-                    />{' '}
-                    Follow on Twitter
-                  </a>
-                )}
+                <a
+                  class="author-card__follow-btn button"
+                  target="_blank"
+                  href={`https://twitter.com/intent/follow?screen_name=${AUTHOR_TWITTER}`}>
+                  <Icon
+                    class="w-5 h-5 inline-block"
+                    pack="mdi"
+                    name="twitter"
+                  />{' '}
+                  Follow on Twitter
+                </a>
               </div>
             </div>
           </>
@@ -233,19 +219,8 @@ const AUTHOR_AVATAR = content.authorImage
     .author-card__bio {
       @apply text-gray-400;
     }
-
-    .subscription-form {
-      @apply w-4/6 mt-2 flex flex-row rounded-lg overflow-hidden shadow-lg;
-    }
-    .subscription-form input {
-      @apply flex-grow border-0 text-theme-accent-gray-dark;
-    }
-    .subscription-form button,
-    .button {
-      @apply px-4 py-2 uppercase font-bold text-white bg-gradient-to-tr from-theme-primary to-theme-dark-secondary dark:from-theme-dark-secondary dark:to-theme-primary;
-    }
     .author-card__follow-btn {
-      @apply rounded-md shadow-md shadow-theme-dark-secondary dark:shadow-theme-primary hover:shadow-theme-secondary hover:dark:shadow-theme-secondary hover:shadow-lg transition-all;
+      @apply rounded-md bg-theme-primary p-2 shadow-md shadow-theme-dark-secondary dark:shadow-theme-primary hover:shadow-theme-secondary hover:dark:shadow-theme-secondary hover:shadow-lg transition-all;
     }
   </style>
 </html>

@@ -19,7 +19,7 @@
     "baseUrl": ".",
     "paths": {
       "$/*": [
-        "./src/*"
+        "src/*"
       ]
     },
     "types": [
@@ -31,7 +31,8 @@
   },
   "include": [
     "src/**/*.d.ts",
-    "src/**/*.js",
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "src/**/*.astro",
+
   ]
 }

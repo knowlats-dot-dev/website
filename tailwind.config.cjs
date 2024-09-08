@@ -18,15 +18,18 @@ module.exports = {
         'max-height': 'max-height'
       },
       colors: {
-        theme: {
-          ...colors
-        },
-        'primary-background-color': 'var(--primary-background-color)'
+        theme: colors
       },
       typography: (theme) => ({
         dark: {
           css: {
             color: theme('colors.gray.200'),
+            a: {
+              '&:hover': {
+                backgroundColor: theme('colors.zinc.800'),
+                textDecoration: 'none'
+              }
+            },
             strong: {
               color: theme('colors.gray.200')
             },
@@ -55,7 +58,8 @@ module.exports = {
             a: {
               color: colors.dark.primary,
               '&:hover': {
-                color: colors.primary
+                backgroundColor: 'none',
+                textDecoration: 'none'
               }
             },
             code: {
@@ -77,22 +81,22 @@ module.exports = {
               color: colors.dark.primary
             },
             h1: {
-              color: colors.dark.secondary
+              color: colors.dark.secondary,
+              strong: {
+                color: theme('colors.black')
+              }
             },
             h2: {
-              color: colors.dark.secondary
+              color: colors.dark.secondary,
+              strong: {
+                color: theme('colors.black')
+              }
             },
             h3: {
-              color: colors.dark.secondary
-            },
-            h4: {
-              color: colors.dark.secondary
-            },
-            h5: {
-              color: colors.dark.secondary
-            },
-            h6: {
-              color: colors.dark.secondary
+              color: colors.dark.secondary,
+              strong: {
+                color: theme('colors.black')
+              }
             }
           }
         }
