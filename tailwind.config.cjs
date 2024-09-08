@@ -24,6 +24,12 @@ module.exports = {
         dark: {
           css: {
             color: theme('colors.gray.200'),
+            a: {
+              '&:hover': {
+                backgroundColor: theme('colors.zinc.800'),
+                textDecoration: 'none'
+              }
+            },
             strong: {
               color: theme('colors.gray.200')
             },
@@ -52,7 +58,7 @@ module.exports = {
             a: {
               color: colors.dark.primary,
               '&:hover': {
-                backgroundColor: colors.accent.default,
+                backgroundColor: 'none',
                 textDecoration: 'none'
               }
             },

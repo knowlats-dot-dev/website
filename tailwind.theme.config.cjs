@@ -8,18 +8,15 @@ module.exports = {
     colors: {
       primary: colors.red[600],
       secondary: colors.red[800],
-      'primary-background-color': colors.zinc[100],
       dark: {
-        primary: colors.red[300],
-        secondary: colors.red[500],
-        'primary-background-color': colors.zinc[950]
+        primary: colors.red[400],
+        secondary: colors.red[500]
       },
       accent: {
         gray: {
-          light: colors.zinc[300],
-          dark: colors.zinc[500]
-        },
-        default: colors.zinc[800]
+          light: colors.zinc[100],
+          dark: colors.zinc[950]
+        }
       }
     }
   }

@@ -9,7 +9,6 @@ import mdx from '@astrojs/mdx'
 import vercel from '@astrojs/vercel/serverless'
 import qwikdev from '@qwikdev/astro'
 import remarkToc from 'remark-toc'
-import rehypeToc from 'rehype-toc'
 import rehypeExternalLinks from 'rehype-external-links'
 
 const __filename = fileURLToPath(import.meta.url)
@@ -60,9 +59,17 @@ export default defineConfig(
       }
     },
     markdown: {
-      remarkPlugins: [remarkToc],
+      remarkPlugins: [
+        [
+          remarkToc,
+          {
+            heading: 'contents',
+            ordered: false,
+            maxDepth: 3
+          }
+        ]
+      ],
       rehypePlugins: [
-        [rehypeToc, { heading: ['h1', 'h2', 'h3'], maxDepth: 3 }],
         [
           rehypeExternalLinks,
           {
