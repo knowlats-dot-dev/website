@@ -1,6 +1,6 @@
 <script lang="ts">
   import SearchIcon from './icons/SearchIcon.svelte'
-  import { isSearchVisible } from '../store/search'
+  import { isSearchVisible } from '$/store/search'
   import { isOpenMobileNavbar } from '$/store/mobile-navbar'
 
   function showSearchDialog() {
@@ -13,6 +13,6 @@
   }
 </script>
 
-<button id='search' aria-label="Search" on:click={showSearchDialog}>
+<button id="search" aria-label="Search" on:click={showSearchDialog}>
   <SearchIcon />
 </button>

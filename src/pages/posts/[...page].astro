@@ -1,7 +1,9 @@
 ---
 export const prerender = true
 
+import type { Page } from 'astro'
 import { getCollection } from 'astro:content'
+import type { CollectionEntry } from 'astro:content'
 import DefaultPageLayout from '$/layouts/default.astro'
 import PostPreviewList from '$/components/PostPreviewList.astro'
 import Paginator from '$/components/Paginator.astro'
@@ -19,7 +21,7 @@ export async function getStaticPaths({ paginate }) {
   })
 }
 
-const { page } = Astro.props
+const { page } = Astro.props as { page: Page<CollectionEntry<'blog'>> }
 ---
 
 <DefaultPageLayout content={{ title }}>

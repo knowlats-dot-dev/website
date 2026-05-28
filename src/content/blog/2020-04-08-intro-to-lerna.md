@@ -254,9 +254,8 @@ lerna add ejs --scope='@lerna-test/serve-web-service'
           document.getElementById('greeting').innerHTML = result
         })
         .catch((error) => {
-          document.getElementById(
-            'greeting'
-          ).innerHTML = `Sorry, an error occured: ${error.message}`
+          document.getElementById('greeting').innerHTML =
+            `Sorry, an error occured: ${error.message}`
         })
     </script>
   </body>

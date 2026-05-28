@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte'
-  import { theme } from '../store/theme'
+  import { theme } from '$/store/theme'
 
   type ThemeType = 'dark' | 'light'
 
@@ -35,6 +35,6 @@
   })
 </script>
 
-<button id='theme' aria-label='Theme' on:click={toggleTheme}>
+<button id="theme" aria-label="Theme" on:click={toggleTheme}>
   <slot theme={currTheme} />
 </button>

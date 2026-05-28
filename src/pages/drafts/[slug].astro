@@ -7,15 +7,13 @@ import { getSlugFromPathname } from '$/utils'
 import PostDraftPageLayout from '$/layouts/post-draft.astro'
 
 export async function getStaticPaths({}) {
-  let allPosts: MarkdownInstance<BlogFrontmatter>[] = []
-  try {
-    allPosts = await Astro.glob<BlogFrontmatter>('../../drafts/*.md')
-  } catch (error) {
-    console.log('No draft posts found while generating the draft pages')
-  }
-  const allSlugs = new Set()
+  const allPosts = Object.values(
+    import.meta.glob<MarkdownInstance<BlogFrontmatter>>('../../drafts/*.md', {
+      eager: true
+    })
+  )
+  const allSlugs = new Set<string>()
   const allPostsWithSlug = allPosts.map((post) => {
-    // @ts-ignore
     const slug = getSlugFromPathname(post.file)
     allSlugs.add(slug.toLowerCase())
     return {
@@ -36,11 +34,13 @@ export async function getStaticPaths({}) {
 }
 
 const { slug } = Astro.params
-const { pages } = Astro.props
+const { pages } = Astro.props as {
+  pages: Array<MarkdownInstance<BlogFrontmatter> & { slug: string }>
+}
 const [post] = pages
 ---
 
-<div class="draft-message">
+<div class='draft-message'>
   You're viewing a <strong>preview</strong> of <code>/posts/{slug}</code> which isn't
   published yet!
 </div>
@@ -49,6 +49,7 @@ const [post] = pages
 </PostDraftPageLayout>
 
 <style>
+  @reference "../../styles/global.css";
   .draft-message {
     @apply w-full bg-yellow-300 dark:bg-yellow-700 text-gray-700 dark:text-white px-2 py-1 text-center;
   }

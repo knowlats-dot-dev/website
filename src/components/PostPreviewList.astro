@@ -11,10 +11,11 @@ const { posts } = Astro.props
 const sortedPosts = sortPosts(posts)
 ---
 
-<section class="post-preview__list">
+<section class='post-preview__list'>
   {sortedPosts.map((post) => <PostPreview post={post} />)}
 </section>
 <style>
+  @reference "../styles/global.css";
   .post-preview__list {
     @apply flex flex-col gap-12;
   }
