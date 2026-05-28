@@ -1,11 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content'
-import { Icon } from 'astro-icon'
-import {
-  SITE,
-  USE_AUTHOR_CARD,
-  USE_POST_IMG_OVERLAY,
-} from '$/config'
+import { Icon } from 'astro-icon/components'
+import { SITE, USE_AUTHOR_CARD, USE_POST_IMG_OVERLAY } from '$/config'
 import { getLocalDate } from '$/utils'
 import MainLayout from '$/components/MainLayout.astro'
 import BaseHead from '$/components/BaseHead.astro'
@@ -23,22 +19,22 @@ const { content } = Astro.props
 const AUTHOR_NAME = content.author
   ? content.author
   : SITE?.author
-  ? SITE?.author
-  : 'Unnamed Author'
+    ? SITE?.author
+    : 'Unnamed Author'
 const AUTHOR_TWITTER = content.authorTwitter
   ? content.authorTwitter
   : SITE?.authorTwitter
-  ? SITE?.authorTwitter
-  : ''
+    ? SITE?.authorTwitter
+    : ''
 const AUTHOR_AVATAR = content.authorImage
   ? content.authorImage
   : SITE?.authorImage
-  ? SITE?.authorImage
-  : ''
+    ? SITE?.authorImage
+    : ''
 ---
 
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang='en'>
   <head>
     <BaseHead
       {...content}
@@ -48,23 +44,23 @@ const AUTHOR_AVATAR = content.authorImage
     />
   </head>
   <MainLayout>
-    <div class="post__header">
-      <div class="post__tags">
+    <div class='post__header'>
+      <div class='post__tags'>
         {
           content.tags.length > 0 &&
             content.tags.map((tag) => (
-              <a class="post__tag" href={`/tags/${tag}`} title={tag}>
+              <a class='post__tag' href={`/tags/${tag}`} title={tag}>
                 {tag}
               </a>
             ))
         }
       </div>
-      <h1 class="post__title">{content.title}</h1>
+      <h1 class='post__title'>{content.title}</h1>
       <h5 class={`post__desc ${AUTHOR_AVATAR ? 'flex flex-row gap-2' : ''}`}>
         {
           AUTHOR_AVATAR ? (
             <img
-              class="avatar"
+              class='avatar'
               src={AUTHOR_AVATAR}
               alt={`${AUTHOR_NAME}'s avatar`}
             />
@@ -76,19 +72,20 @@ const AUTHOR_AVATAR = content.authorImage
           {
             AUTHOR_TWITTER ? (
               <a
-                class="post__author"
+                class='post__author'
                 href={`https://twitter.com/${AUTHOR_TWITTER}`}
                 title={`${AUTHOR_NAME}'s twitter`}
-                target="_blank"
-                rel="external">
+                target='_blank'
+                rel='external'
+              >
                 {AUTHOR_NAME}
               </a>
             ) : (
-              <span class="post__author">{AUTHOR_NAME}</span>
+              <span class='post__author'>{AUTHOR_NAME}</span>
             )
           }
           {!AUTHOR_AVATAR ? ' | ' : ''}
-          <span class="post__date"
+          <span class='post__date'
             >{getLocalDate(content.date).format('dddd D MMMM YYYY')}
             <!-- Post Stats? -->
             <!-- <Icon class="w-5 h-5 inline-block" pack="mdi" name="eye" />
@@ -103,15 +100,15 @@ const AUTHOR_AVATAR = content.authorImage
       content.image ? (
         USE_POST_IMG_OVERLAY ? (
           <>
-            <div class="img__outer">
+            <div class='img__outer'>
               <img src={content.image} alt={content.title} />
-              <div class="img_gradient" />
+              <div class='img_gradient' />
             </div>
             <br />
           </>
         ) : (
           <>
-            <img class="img__outer" src={content.image} alt={content.title} />
+            <img class='img__outer' src={content.image} alt={content.title} />
             <br />
           </>
         )
@@ -122,45 +119,43 @@ const AUTHOR_AVATAR = content.authorImage
     <Prose>
       <slot />
     </Prose>
-    <div class="post__footer">
+    <div class='post__footer'>
       {
         USE_AUTHOR_CARD && (
           <>
             <br />
-            <div class="author-card">
+            <div class='author-card'>
               {AUTHOR_AVATAR ? (
                 <img
-                  class="author-card__img avatar avatar--lg"
+                  class='author-card__img avatar avatar--lg'
                   src={AUTHOR_AVATAR}
                   alt={`${AUTHOR_NAME}'s avatar`}
                 />
               ) : (
                 ''
               )}
-              <div class="author-card__meta">
+              <div class='author-card__meta'>
                 {AUTHOR_TWITTER ? (
                   <a
-                    class="author-card__author"
+                    class='author-card__author'
                     href={`https://twitter.com/${AUTHOR_TWITTER}`}
                     title={`${AUTHOR_NAME}'s twitter`}
-                    target="_blank"
-                    rel="external">
+                    target='_blank'
+                    rel='external'
+                  >
                     {AUTHOR_NAME}
                   </a>
                 ) : (
-                  <span class="author-card__author">{AUTHOR_NAME}</span>
+                  <span class='author-card__author'>{AUTHOR_NAME}</span>
                 )}
-                <p class="author-card__bio">{SITE.authorBio}</p>
+                <p class='author-card__bio'>{SITE.authorBio}</p>
                 <br />
                 <a
-                  class="author-card__follow-btn button"
-                  target="_blank"
-                  href={`https://twitter.com/intent/follow?screen_name=${AUTHOR_TWITTER}`}>
-                  <Icon
-                    class="w-5 h-5 inline-block"
-                    pack="mdi"
-                    name="twitter"
-                  />{' '}
+                  class='author-card__follow-btn button'
+                  target='_blank'
+                  href={`https://twitter.com/intent/follow?screen_name=${AUTHOR_TWITTER}`}
+                >
+                  <Icon class='w-5 h-5 inline-block' name='mdi:twitter' />{' '}
                   Follow on Twitter
                 </a>
               </div>
@@ -171,6 +166,7 @@ const AUTHOR_AVATAR = content.authorImage
     </div>
   </MainLayout>
   <style>
+    @reference "../styles/global.css";
     .post__header {
       @apply py-4 mb-1 text-center flex flex-col items-center gap-2;
     }

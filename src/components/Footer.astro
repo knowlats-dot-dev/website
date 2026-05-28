@@ -6,15 +6,15 @@ import RssIcon from './icons/RssIcon.astro'
 import ModeLabel from './ModeLabel.svelte'
 ---
 
-<footer class="footer">
-  <ul class="footer__social-link-list">
+<footer class='footer'>
+  <ul class='footer__social-link-list'>
     <li>
-      <a href="https://webring.wonderful.software#knowlats.dev" title="Webring">
+      <a href='https://webring.wonderful.software#knowlats.dev' title='Webring'>
         <img
-          alt="Webring"
-          width="24"
-          height="24"
-          src="/assets/image/webring.svg"
+          alt='Webring'
+          width='24'
+          height='24'
+          src='/assets/image/webring.svg'
         />
       </a>
     </li>
@@ -24,25 +24,26 @@ import ModeLabel from './ModeLabel.svelte'
       </a>
     </li>
     <li>
-      <a href="/rss.xml" title="RSS">
+      <a href='/rss.xml' title='RSS'>
         <RssIcon />
       </a>
     </li>
   </ul>
-  <div class="footer__text">
+  <div class='footer__text'>
     &copy; {new Date().getFullYear()}
     {SITE.name}
     <br />
-    Made with {getRandomFooterEmoji()} by <a href="https://icegotcha.me"
+    Made with {getRandomFooterEmoji()} by <a href='https://icegotcha.me'
       >Icegotcha</a
     >
-    using <a href="https://astro.build/">Astro</a> with <ModeLabel
+    using <a href='https://astro.build/'>Astro</a> with <ModeLabel
       client:load
     /> custom theme based on
-    <a href="https://github.com/one-aalam/astro-ink">Ink</a>
+    <a href='https://github.com/one-aalam/astro-ink'>Ink</a>
   </div>
 </footer>
 <style>
+  @reference "../styles/global.css";
   a {
     @apply underline;
   }

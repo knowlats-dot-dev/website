@@ -1,7 +1,7 @@
 import rss from '@astrojs/rss'
 import { getCollection } from 'astro:content'
-import { SITE } from '../config'
-import { sortPosts } from '../utils'
+import { SITE } from '$/config'
+import { sortPosts } from '$/utils'
 
 const allPosts = await getCollection('blog')
 const sortedPosts = sortPosts(Object.values(allPosts))
@@ -21,7 +21,7 @@ export const get = () =>
     items: sortedPosts.map((item) => ({
       title: item.data.title,
       description: item.data.description,
-      link: `posts/${item.slug}`,
+      link: `posts/${item.id}`,
       pubDate: new Date(item.data.date)
     })),
     // (optional) inject custom xml

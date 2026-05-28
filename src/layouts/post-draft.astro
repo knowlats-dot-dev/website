@@ -13,8 +13,8 @@ interface Props {
 const { content } = Astro.props
 ---
 
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang='en'>
   <head>
     <BaseHead
       {...content}
@@ -22,27 +22,27 @@ const { content } = Astro.props
     />
   </head>
   <MainLayout>
-    <div class="post__header">
-      <div class="post__tags">
+    <div class='post__header'>
+      <div class='post__tags'>
         {
           content.tags.length > 0 &&
             content.tags.map((tag) => (
-              <a class="post__tag" href={`/tags/${tag}`} title={tag}>
+              <a class='post__tag' href={`/tags/${tag}`} title={tag}>
                 {tag}
               </a>
             ))
         }
       </div>
-      <h1 class="post__title">{content.title}</h1>
-      <h5 class="post__desc">
+      <h1 class='post__title'>{content.title}</h1>
+      <h5 class='post__desc'>
         <a
-          class="post__author"
+          class='post__author'
           href={`https://twitter.com/${content.authorTwitter}`}
           title={`${content.author + "'s"} twitter`}
-          target="_blank"
-          rel="external">{content.author}</a
+          target='_blank'
+          rel='external'>{content.author}</a
         > |
-        <span class="post__date"
+        <span class='post__date'
           >{getLocalDate(content.date).format('dddd D MMMM YYYY')}</span
         >
       </h5>
@@ -53,6 +53,7 @@ const { content } = Astro.props
     </Prose>
   </MainLayout>
   <style>
+    @reference "../styles/global.css";
     .post__header {
       @apply py-4 mb-1;
     }

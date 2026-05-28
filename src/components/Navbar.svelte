@@ -28,6 +28,7 @@
 </ul>
 
 <style lang="postcss">
+  @reference "../styles/global.css";
   .navbar {
     @apply flex gap-6 text-gray-600 items-center;
   }

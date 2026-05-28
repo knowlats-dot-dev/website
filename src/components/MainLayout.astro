@@ -7,13 +7,13 @@ import SearchModal from './SearchModal.svelte'
 ---
 
 <BaseLayout>
-  <br class="my-4" />
+  <br class='my-4' />
   <Header client:visible />
-  <br class="my-4" />
-  <div class="content">
+  <br class='my-4' />
+  <div class='content'>
     <slot />
   </div>
-  <br class="my-4" />
+  <br class='my-4' />
   <Footer />
   <Portal>
     <SearchModal client:load />

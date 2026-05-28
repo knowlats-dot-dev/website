@@ -1,7 +1,8 @@
 ---
-import '@fontsource/fira-sans'
+import '@fontsource/bai-jamjuree/400.css'
+import '@fontsource/bai-jamjuree/700.css'
 import { SITE } from '$/config'
-import '../styles/global.less'
+import '$/styles/global.css'
 
 export type Props = {
   title: string
@@ -16,120 +17,120 @@ const { title = SITE.title, description, permalink, image } = Astro.props
 <!-- Use Google Fonts, if you don't wanna prefer a self-hosted version --><!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet"> -->
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset='UTF-8' />
+<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+<meta name='viewport' content='width=device-width, initial-scale=1' />
 
 <title>{title}</title>
-<meta name="title" content={title} />
-{description && <meta name="description" content={description} />}
+<meta name='title' content={title} />
+{description && <meta name='description' content={description} />}
 
 <!-- Favicons -->
 <link
-  rel="icon"
-  type="image/png"
-  sizes="32x32"
-  href="/assets/favicons/favicon-32x32.png"
+  rel='icon'
+  type='image/png'
+  sizes='32x32'
+  href='/assets/favicons/favicon-32x32.png'
 />
 <link
-  rel="apple-touch-icon"
-  sizes="57x57"
-  href="/assets/favicons/apple-touch-icon-57x57.png"
+  rel='apple-touch-icon'
+  sizes='57x57'
+  href='/assets/favicons/apple-touch-icon-57x57.png'
 />
 <link
-  rel="apple-touch-icon"
-  sizes="60x60"
-  href="/assets/favicons/apple-touch-icon-60x60.png"
+  rel='apple-touch-icon'
+  sizes='60x60'
+  href='/assets/favicons/apple-touch-icon-60x60.png'
 />
 <link
-  rel="apple-touch-icon"
-  sizes="72x72"
-  href="/assets/favicons/apple-touch-icon-72x72.png"
+  rel='apple-touch-icon'
+  sizes='72x72'
+  href='/assets/favicons/apple-touch-icon-72x72.png'
 />
 <link
-  rel="apple-touch-icon"
-  sizes="76x76"
-  href="/assets/favicons/apple-touch-icon-76x76.png"
+  rel='apple-touch-icon'
+  sizes='76x76'
+  href='/assets/favicons/apple-touch-icon-76x76.png'
 />
 <link
-  rel="apple-touch-icon"
-  sizes="114x114"
-  href="/assets/favicons/apple-touch-icon-114x114.png"
+  rel='apple-touch-icon'
+  sizes='114x114'
+  href='/assets/favicons/apple-touch-icon-114x114.png'
 />
 <link
-  rel="apple-touch-icon"
-  sizes="120x120"
-  href="/assets/favicons/apple-touch-icon-120x120.png"
+  rel='apple-touch-icon'
+  sizes='120x120'
+  href='/assets/favicons/apple-touch-icon-120x120.png'
 />
 <link
-  rel="apple-touch-icon"
-  sizes="144x144"
-  href="/assets/favicons/apple-touch-icon-144x144.png"
+  rel='apple-touch-icon'
+  sizes='144x144'
+  href='/assets/favicons/apple-touch-icon-144x144.png'
 />
 <link
-  rel="apple-touch-icon"
-  sizes="152x152"
-  href="/assets/favicons/apple-touch-icon-152x152.png"
+  rel='apple-touch-icon'
+  sizes='152x152'
+  href='/assets/favicons/apple-touch-icon-152x152.png'
 />
 <link
-  rel="apple-touch-icon"
-  sizes="180x180"
-  href="/assets/favicons/apple-touch-icon-180x180.png"
+  rel='apple-touch-icon'
+  sizes='180x180'
+  href='/assets/favicons/apple-touch-icon-180x180.png'
 />
 <link
-  rel="shortcut icon"
-  type="image/png"
-  sizes="16x16"
-  href="/assets/favicons/favicon-16x16.png"
+  rel='shortcut icon'
+  type='image/png'
+  sizes='16x16'
+  href='/assets/favicons/favicon-16x16.png'
 />
 <link
-  rel="mask-icon"
-  href="/assets/favicons/safari-pinned-tab.svg"
-  color="#5bbad5"
+  rel='mask-icon'
+  href='/assets/favicons/safari-pinned-tab.svg'
+  color='#5bbad5'
 />
 <meta
-  name="msapplication-config"
-  content="/assets/favicons/browserconfig.xml"
+  name='msapplication-config'
+  content='/assets/favicons/browserconfig.xml'
 />
-<link rel="manifest" href="/assets/favicons/site.webmanifest" />
-<meta name="msapplication-TileColor" content="#da532c" />
-<meta name="theme-color" content="#ffffff" />
+<link rel='manifest' href='/assets/favicons/site.webmanifest' />
+<meta name='msapplication-TileColor' content='#da532c' />
+<meta name='theme-color' content='#ffffff' />
 
 <!-- Sitemap -->
-<link rel="sitemap" href="/sitemap-index.xml" />
+<link rel='sitemap' href='/sitemap-index.xml' />
 
 <!-- Open Graph Tags (Facebook) -->
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content={SITE.name} />
-<meta property="og:title" content={title} />
-{permalink && <meta property="og:url" content={permalink} />}
-{description && <meta property="og:description" content={description} />}
-{image && <meta property="og:image" content={image} />}
+<meta property='og:type' content='website' />
+<meta property='og:site_name' content={SITE.name} />
+<meta property='og:title' content={title} />
+{permalink && <meta property='og:url' content={permalink} />}
+{description && <meta property='og:description' content={description} />}
+{image && <meta property='og:image' content={image} />}
 
 <!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content={title} />
-<meta name="twitter:creator" content={`@${SITE.authorTwitter}`} />
-{permalink && <meta property="twitter:url" content={permalink} />}
-{description && <meta property="twitter:description" content={description} />}
-{image && <meta property="twitter:image" content={image} />}
+<meta property='twitter:card' content='summary_large_image' />
+<meta property='twitter:title' content={title} />
+<meta name='twitter:creator' content={`@${SITE.authorTwitter}`} />
+{permalink && <meta property='twitter:url' content={permalink} />}
+{description && <meta property='twitter:description' content={description} />}
+{image && <meta property='twitter:image' content={image} />}
 
-{permalink && <link rel="canonical" href={permalink} />}
+{permalink && <link rel='canonical' href={permalink} />}
 
 <script is:inline>
-const theme = (() => {
-  if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-    return localStorage.getItem('theme')
-  }
-  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    return 'dark'
-  }
-  return 'light'
-})()
+  const theme = (() => {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+      return localStorage.getItem('theme')
+    }
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark'
+    }
+    return 'light'
+  })()
 
-if (theme === 'light') {
-  document.documentElement.classList.remove('dark')
-} else {
-  document.documentElement.classList.add('dark')
-}
+  if (theme === 'light') {
+    document.documentElement.classList.remove('dark')
+  } else {
+    document.documentElement.classList.add('dark')
+  }
 </script>

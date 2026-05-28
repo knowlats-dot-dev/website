@@ -14,14 +14,15 @@ const posts = await getCollection('blog')
 
 <DefaultPageLayout content={{ title, description }} showPageHeader={false}>
   <PostPreviewList posts={posts} />
-  <div class="page__actions">
-    <a class="action__go-to-blog" href="/posts" title="All Posts"
+  <div class='page__actions'>
+    <a class='action__go-to-blog' href='/posts' title='All Posts'
       >All Posts &rarr;</a
     >
   </div>
 </DefaultPageLayout>
 
 <style>
+  @reference "../styles/global.css";
   .page__actions {
     @apply flex justify-center md:justify-end py-6;
   }

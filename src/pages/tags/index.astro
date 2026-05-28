@@ -18,14 +18,15 @@ const tags = [
 ---
 
 <DefaultPageLayout content={{ title }}>
-  <ul class="tag-list">
+  <ul class='tag-list'>
     {
       tags.map((tag) => (
         <li>
           <a
-            class="tag"
+            class='tag'
             href={`/tags/${tag}`}
-            title={`View posts tagged under "${tag}"`}>
+            title={`View posts tagged under "${tag}"`}
+          >
             {tag}
           </a>
         </li>
@@ -35,6 +36,7 @@ const tags = [
 </DefaultPageLayout>
 
 <style>
+  @reference "../../styles/global.css";
   .tag-list {
     @apply list-none flex gap-2 flex-wrap;
   }

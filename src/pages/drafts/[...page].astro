@@ -1,7 +1,7 @@
 ---
 export const prerender = true
 
-import type { InferGetStaticPropsType, MarkdownInstance } from 'astro'
+import type { MarkdownInstance, Page } from 'astro'
 import type { BlogFrontmatter } from '$/types'
 import DefaultPageLayout from '$/layouts/default.astro'
 import PostDraftPreviewList from '$/components/PostDraftPreviewList.astro'
@@ -11,16 +11,12 @@ import { SITE, PAGE_SIZE } from '$/config'
 let title = 'Drafts'
 let description =
   "You're viewing a list of unpublished articles on the site. Accuracy or correctness isn't guranteed..."
-
-export async function getStaticPaths({ paginate, rss }) {
-  let allPosts: MarkdownInstance<BlogFrontmatter>[] = []
-  try {
-    allPosts = await Astro.glob<BlogFrontmatter>('../../drafts/*.md')
-  } catch (error) {
-    console.log(
-      'No draft posts found while generating the index page for the draft pages'
-    )
-  }
+export async function getStaticPaths({ paginate }) {
+  const allPosts = Object.values(
+    import.meta.glob<MarkdownInstance<BlogFrontmatter>>('../../drafts/*.md', {
+      eager: true
+    })
+  )
   const sortedPosts = allPosts.sort(
     (a, b) =>
       new Date(b.frontmatter.date).getTime() -
@@ -31,21 +27,19 @@ export async function getStaticPaths({ paginate, rss }) {
     pageSize: PAGE_SIZE
   })
 }
-
-type Props = InferGetStaticPropsType<typeof getStaticPaths>
-
-const { page } = Astro.props
+const { page } = Astro.props as {
+  page: Page<MarkdownInstance<BlogFrontmatter>>
+}
 ---
 
 <DefaultPageLayout content={{ title, description }}>
   {
     SITE.listDrafts ? (
-      // @ts-ignore
       <PostDraftPreviewList posts={page.data} />
     ) : (
-      <p class="text-gray-700 dark:text-gray-100">
+      <p class='text-gray-700 dark:text-gray-100'>
         Looks like you have landed on a unpublished posts page. Please find all
-        the published posts <a href="/posts">here</a>!
+        the published posts <a href='/posts'>here</a>!
       </p>
     )
   }
