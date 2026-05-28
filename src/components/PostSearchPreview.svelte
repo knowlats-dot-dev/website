@@ -1,20 +1,23 @@
 <script lang="ts">
   type Props = {
-    slug: string
+    id?: string
+    slug?: string
     title: string
     description: string
-    category: string
+    category?: string
     tags: Array<string>
   }
   export let post: Props
   export let isLast: boolean = false
+  $: postSlug = post.id ?? post.slug ?? ''
+  $: postCategory = post.category ?? 'posts'
+  $: postHref = `/${postCategory}/${postSlug}`
 </script>
 
 <div class="post-preview hover:bg-theme-primary">
   <div class="flex-1">
     <h4 class="post-preview__title">
-      <a href={`/${post.category}/${post.slug}`} title={post.title}
-        >{post.title} &rarr;</a>
+      <a href={postHref} title={post.title}>{post.title} &rarr;</a>
     </h4>
     <p class="post-preview__desc">
       {post.description}
@@ -31,6 +34,7 @@
 {/if}
 
 <style lang="postcss">
+  @reference "../styles/global.css";
   .post-preview {
     @apply flex gap-6 text-left;
   }

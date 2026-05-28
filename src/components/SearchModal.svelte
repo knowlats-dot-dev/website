@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { fade, fly } from 'svelte/transition'
-  import { isSearchVisible } from '../store/search'
+  import { isSearchVisible } from '$/store/search'
   import Search from './Search.svelte'
 
   const dismissModal = () => {
@@ -19,19 +18,16 @@
 
 {#if $isSearchVisible}
   <!-- svelte-ignore a11y-no-static-element-interactions -->
-  <div
-    class="modal__backdrop"
-    on:click={dismissModal}
-    on:keydown={handleEsc}
-    transition:fade />
+  <div class="modal__backdrop" on:click={dismissModal} on:keydown={handleEsc}></div>
   <div class="modal">
-    <div class="modal__cnt" transition:fly={{ y: 200, duration: 300 }}>
+    <div class="modal__cnt">
       <Search />
     </div>
   </div>
 {/if}
 
 <style lang="postcss">
+  @reference "../styles/global.css";
   .modal {
     @apply absolute top-0 left-0 w-full h-full grid justify-center content-center pointer-events-none;
   }

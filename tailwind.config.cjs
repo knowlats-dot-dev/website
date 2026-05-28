@@ -1,13 +1,13 @@
 const { fontFamily } = require('tailwindcss/defaultTheme')
 const config = require('./tailwind.theme.config.cjs')
-/**
- * Find the applicable theme color palette, or use the default one
- */
+
 const themeConfig = config.default
 const { colors } = themeConfig
+
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
-  content: ['./public/**/*.html', './src/**/*.{astro,js,ts}'],
+  content: ['./public/**/*.html', './src/**/*.{astro,svelte,js,ts}'],
   safelist: ['dark'],
   theme: {
     fontFamily: {
@@ -106,10 +106,4 @@ module.exports = {
   variants: {
     extend: { typography: ['dark'] }
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/aspect-ratio'),
-    require('tailwindcss-hyphens')
-  ]
 }

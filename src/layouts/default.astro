@@ -14,8 +14,8 @@ export type Props = {
 const { content, showPageHeader = true } = Astro.props
 ---
 
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang='en'>
   <head>
     <BaseHead
       title={content.title
@@ -30,15 +30,16 @@ const { content, showPageHeader = true } = Astro.props
   <MainLayout>
     {
       showPageHeader && (
-        <div class="page__header">
-          <h1 class="page__title">{content.title}</h1>
-          <h5 class="page__desc">{content.description}</h5>
+        <div class='page__header'>
+          <h1 class='page__title'>{content.title}</h1>
+          <h5 class='page__desc'>{content.description}</h5>
         </div>
       )
     }
     <slot />
   </MainLayout>
   <style>
+    @reference "../styles/global.css";
     .page__header {
       @apply py-4 mb-1;
     }

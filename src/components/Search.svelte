@@ -2,22 +2,37 @@
   import { onMount } from 'svelte'
   import SearchIcon from './icons/SearchIcon.svelte'
   import PostSearchPreview from './PostSearchPreview.svelte'
+  type SearchDoc = {
+    id: string
+    slug?: string
+    title: string
+    description: string
+    category?: string
+    tags: string[]
+    body?: string
+  }
 
   let searchInput
-  let searchableDocs
+  let searchableDocs: SearchDoc[] = []
   let searchIndex
 
   let searchQuery = ''
-  let searchResults = []
+  let searchResults: SearchDoc[] = []
 
   onMount(async () => {
     const lunr = (await import('lunr')).default
     const resp = await fetch('/search-index.json')
-    searchableDocs = await resp.json()
+    const docs = await resp.json()
+    searchableDocs = docs.map(
+      (doc: Omit<SearchDoc, 'id'> & { id?: string }) => ({
+        ...doc,
+        id: doc.id ?? doc.slug ?? ''
+      })
+    )
     // Initialize indexing
     searchIndex = lunr(function () {
       // the match key...
-      this.ref('slug')
+      this.ref('id')
 
       // indexable properties
       this.field('title')
@@ -41,7 +56,7 @@
       searchResults = []
       matches.map((match) => {
         searchableDocs.filter((doc) => {
-          if (match.ref === doc.slug) {
+          if (match.ref === doc.id) {
             searchResults.push(doc)
           }
         })
@@ -58,7 +73,8 @@
       name="search"
       bind:this={searchInput}
       placeholder="What are you looking for?"
-      bind:value={searchQuery} />
+      bind:value={searchQuery}
+    />
   </div>
   <div class="search__results">
     {#if searchResults.length}
@@ -79,6 +95,7 @@
 </div>
 
 <style lang="postcss">
+  @reference "../styles/global.css";
   .search {
     @apply w-full relative bg-theme-primary  p-8  rounded-md shadow-lg;
   }

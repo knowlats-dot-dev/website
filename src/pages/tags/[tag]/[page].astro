@@ -1,7 +1,8 @@
 ---
 export const prerender = true
-import type { InferGetStaticParamsType, InferGetStaticPropsType } from 'astro'
+import type { Page } from 'astro'
 import { getCollection } from 'astro:content'
+import type { CollectionEntry } from 'astro:content'
 import { PAGE_SIZE } from '$/config'
 import DefaultPageLayout from '$/layouts/default.astro'
 import PostPreviewList from '$/components/PostPreviewList.astro'
@@ -26,18 +27,15 @@ export async function getStaticPaths({ paginate }) {
   })
 }
 
-type Params = InferGetStaticParamsType<typeof getStaticPaths>
-type Props = InferGetStaticPropsType<typeof getStaticPaths>
-
-const { page } = Astro.props as Props
-const { tag } = Astro.params as Params
+const { page } = Astro.props as { page: Page<CollectionEntry<'blog'>> }
+const { tag } = Astro.params as { tag: string }
 ---
 
 <DefaultPageLayout
   content={{
     title: `Posts by Tag: ${tag}`
-  }}>
-  <!-- @ts-ignore -->
+  }}
+>
   <PostPreviewList posts={page.data} />
   <Paginator page={page} />
 </DefaultPageLayout>

@@ -1,6 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+@config "../../tailwind.config.cjs";
+
 
 @layer base {
   html {
@@ -13,4 +15,8 @@
       }
     }
   }
+}
+
+body {
+  font-family: 'Bai Jamjuree', sans-serif;
 }

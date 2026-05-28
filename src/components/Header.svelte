@@ -25,6 +25,7 @@
 {/if}
 
 <style lang="postcss">
+  @reference "../styles/global.css";
   .header {
     @apply flex gap-4 items-center justify-between border-b py-3 sm:px-2;
   }

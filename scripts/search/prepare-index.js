@@ -26,8 +26,10 @@ import grayMatter from 'gray-matter'
         data: { slug, title, description, tags },
         content
       } = grayMatter(file)
+      const resolvedSlug = slug || getSlugFromPathname(contentFilePaths[i])
       index.push({
-        slug: slug || getSlugFromPathname(contentFilePaths[i]),
+        id: resolvedSlug,
+        slug: resolvedSlug,
         category: 'posts',
         title,
         description,

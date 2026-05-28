@@ -1,8 +1,8 @@
 {
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
-    "moduleResolution": "node",
-    "module": "ES2022",
+    "moduleResolution": "bundler",
+    "module": "preserve",
     "lib": [
       "es2020"
     ],
@@ -16,11 +16,14 @@
     "forceConsistentCasingInFileNames": true,
     "allowJs": true,
     "checkJs": true,
-    "baseUrl": ".",
     "paths": {
-      "$/*": [
-        "src/*"
-      ]
+      "$/components/*": ["./src/components/*"],
+      "$/layouts/*": ["./src/layouts/*"],
+      "$/utils": ["./src/utils.ts"],
+      "$/config": ["./src/config.ts"],
+      "$/types": ["./src/types.ts"],
+      "$/store/*": ["./src/store/*"],
+      "$/styles/*": ["./src/styles/*"]
     },
     "types": [
       "astro/env"
@@ -33,6 +36,7 @@
     "src/**/*.d.ts",
     "src/**/*.ts",
     "src/**/*.astro",
+    "src/**/*.svelte",
 
   ]
 }

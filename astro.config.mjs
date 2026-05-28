@@ -3,11 +3,11 @@ import { fileURLToPath } from 'url'
 import { defineConfig } from 'astro/config'
 
 import svelte from '@astrojs/svelte'
-import tailwind from '@astrojs/tailwind'
 import sitemap from '@astrojs/sitemap'
 import mdx from '@astrojs/mdx'
-import vercel from '@astrojs/vercel/serverless'
-import qwikdev from '@qwikdev/astro'
+import vercel from '@astrojs/vercel'
+import tailwindcss from '@tailwindcss/vite'
+import icon from 'astro-icon'
 import remarkToc from 'remark-toc'
 import rehypeExternalLinks from 'rehype-external-links'
 
@@ -39,16 +39,15 @@ export default defineConfig(
     integrations: [
       mdx(),
       svelte(),
-      tailwind({
-        config: {
-          applyBaseStyles: false
+      icon({
+        include: {
+          mdi: ['check-circle', 'close-circle', 'note', 'warning-circle', 'twitter']
         }
       }),
       sitemap(),
-      qwikdev()
     ],
     vite: {
-      plugins: [],
+      plugins: [tailwindcss()],
       resolve: {
         alias: {
           $: path.resolve(__dirname, './src')

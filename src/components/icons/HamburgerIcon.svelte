@@ -5,10 +5,11 @@
 </script>
 
 <div class={`hamburger ${active ? 'active' : ''}`}>
-  <div />
+  <div></div>
 </div>
 
 <style lang="postcss">
+  @reference "../../styles/global.css";
   .hamburger {
     @apply w-6;
 
@@ -20,10 +21,10 @@
 
     &.active {
       &::before {
-        @apply translate-y-2 rotate-[135deg];
+        @apply translate-y-2 rotate-135;
       }
       &::after {
-        @apply -translate-y-2 -rotate-[135deg];
+        @apply -translate-y-2 -rotate-135;
       }
       div {
         @apply scale-0;

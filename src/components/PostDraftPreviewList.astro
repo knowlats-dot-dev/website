@@ -10,10 +10,11 @@ interface Props {
 const { posts } = Astro.props
 ---
 
-<section class="post-draft-preview__list">
+<section class='post-draft-preview__list'>
   {posts.map((post) => <PostDraftPreview post={post} />)}
 </section>
 <style>
+  @reference "../styles/global.css";
   .post-draft-preview__list {
     @apply flex flex-col gap-12;
   }
