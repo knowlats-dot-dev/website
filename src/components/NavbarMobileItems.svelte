@@ -30,11 +30,11 @@
       @apply max-h-0 border-0 transform transition-[max-height] duration-300 ease-out;
     }
     &.show {
-      @apply max-h-screen border-b border-gray-200 dark:border-gray-700 transform transition-[max-height] duration-300 ease-in;
+      @apply max-h-screen border-b border-gray-300 dark:border-gray-600 transform transition-[max-height] duration-300 ease-in;
     }
   }
 
   .mobile-nav-item {
-    @apply p-2 pl-8 w-full text-lg md:text-2xl hover:bg-gray-300 dark:hover:bg-gray-700 hover:underline decoration-dashed decoration-theme-primary dark:decoration-theme-dark-primary;
+    @apply font-display p-2 pl-8 w-full text-lg md:text-2xl hover:bg-gray-300 dark:hover:bg-gray-700 dark:decoration-theme-dark-primary;
   }
 </style>

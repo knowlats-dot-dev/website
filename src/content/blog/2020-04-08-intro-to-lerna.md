@@ -14,9 +14,9 @@ tags:
 canonical_url: https://medium.com/@icegotchafantasoxy/introduction-to-lerna-tool-for-monorepos-7a3d6fe4d65c
 ---
 
-### Contents
+# Contents
 
-## Introduction
+# Introduction
 
 Project ของ NPM (Node Package Manager) ไม่ว่าจะเป็น Project ที่สร้างขึ้นมาด้วยคำสั่ง `npm init` Project ที่เป็น React, Vue, หรืออะไรที่เป็น JavaScript ที่มีไฟล์ package.json จะถือว่าเป็น 1 Project
 
@@ -28,7 +28,7 @@ Monorepo เป็นแนวคิดของการจัดโครง�
 
 ในบล็อกนี้ ผู้เขียนจะแนะนำให้รู้จักเครื่องมือหนึ่งที่ช่วยทำให้การทำ Monorepo กับ Project ที่เป็น JavaScript เป็นเรื่องที่ง่ายขึ้น เครื่องมือตัวนี้มีชื่อว่า **“[Lerna](https://github.com/lerna/lerna)”**
 
-## การติดตั้ง Lerna
+# การติดตั้ง Lerna
 
 เราสามารถติดตั้งด้วย NPM แบบ Global ดังคำสั่งด้านล่าง
 
@@ -36,7 +36,7 @@ Monorepo เป็นแนวคิดของการจัดโครง�
 npm install -g lerna
 ```
 
-## การสร้าง Project ด้วย Lerna
+# การสร้าง Project ด้วย Lerna
 
 การเริ่มใช้งาน เราต้องสร้างโปรเจคด้วย Lerna ก่อน ดังคำสั่งด้านล่างนี้
 
@@ -68,7 +68,7 @@ lerna success Initialized Lerna files
 
 เมื่อดูผลลัพธ์ของคำสั่งในตอนแรก จะเห็นได้ว่า Lerna สร้าง Git Repository ให้เราด้วย ถึงตรงนี้เราสามารถพิมพ์ `git commit` เพื่อเพิ่ม Commit แรกได้เลย
 
-## เพิ่ม Subproject แรก
+# เพิ่ม Subproject แรก
 
 หลังจากสร้าง Project ด้วย Lerna เสร็จแล้ว การสร้าง Project ภายใน Project นี้ (ขอเรียก Subproject เพื่อให้เข้าใจง่าย ๆ) ก็สามารถทำได้ตามถนัด จะสร้างด้วย NPM, `create-react-app`, หรือโปรแกรมอะไรก็ได้
 
@@ -156,7 +156,7 @@ module.exports = logger
 
 ตอนนี้ Logger ก็พร้อมใช้งานใน Project ต่อไปแล้ว
 
-## สร้าง Subproject ต่อไปเป็น Service
+# สร้าง Subproject ต่อไปเป็น Service
 
 การสร้าง Subproject ไม่จำเป็นต้องสร้างในโฟลเดอร์ packages เสมอไป เราสามารถสร้างในโฟลเดอร์ที่มีชื่อที่สื่อกว่าก็ได้ เช่น services, apps แต่ต้องแก้ไขที่ไฟล์ `lerna.json` เพื่อให้ Lerna เห็น Subproject ที่โฟลเดอร์ดังกล่าวด้วย
 
@@ -368,7 +368,7 @@ server.listen(PORT, () => {
 
 ในหัวข้อต่อไป จะอธิบายคำสั่งของ Lerna ที่ควรรู้จัก ได้แก่ `lerna add`, `lerna run`, `lerna exec`, `lerna bootstrap` และ `lerna clean`
 
-## การติดตั้ง Package ให้กับ Project
+# การติดตั้ง Package ให้กับ Project
 
 `lerna add` เป็นคำสั่งที่ใช้ติดตั้ง Package ให้กับ Subproject ที่เรากำหนดไว้ มีความสามารถพิเศษ คือ มันติดตั้ง Package ลงในมากกว่า 1 Project ได้
 
@@ -476,7 +476,7 @@ lerna add express --scope='@lerna-test/*-service' --ignore='@lerna-test/backend-
 
 คำสั่งนี้แปลความหมายได้ว่า ให้ลง `express` ในทุก Project ที่ชื่อมีตัวอักษรใด ๆ อยู่ข้างหน้า `-service` ยกเว้น Project ที่ชื่อ `@lerna-test/backend-service`
 
-## รัน Command ผ่าน Lerna
+# รัน Command ผ่าน Lerna
 
 นอกจากการติดตั้ง Package แล้ว Lerna ยังสามารถช่วยทำคำสั่งในทุก Project ที่เลือกพร้อมกันได้ ผ่านคำสั่ง `lerna exec` และ `lerna run`
 
@@ -551,7 +551,7 @@ lerna run start --parallel --scope '@lerna-test/*-service'
 
 > คำสั่ง `lerna run` ทำงานเหมือน `lerna exec` แต่สามารถรันได้เฉพาะ NPM Script เท่านั้น
 
-## การติดตั้ง Package ทั้งหมด และการลบ Package ใน Lerna
+# การติดตั้ง Package ทั้งหมด และการลบ Package ใน Lerna
 
 เรายังคงสามารถใช้ `npm install` ใน Project ที่ใช้ Lerna ได้อยู่ตราบเท่าที่ไม่มีการใช้ Subproject เป็น Package ให้ Subproject อื่น
 
@@ -606,7 +606,7 @@ lerna info clean removing /home/icegotchaf/lerna-test-project/services/serve-web
 lerna success clean finished
 ```
 
-## เกี่ยวกับ Package.json ที่เป็นของ Project หลัก
+# เกี่ยวกับ Package.json ที่เป็นของ Project หลัก
 
 ที่ผ่านมา เรายุ่งกับไฟล์ `package.json` ที่เป็นของแต่ละ Subproject เท่านั้น ในหัวข้อนี้ ผู้เขียนจะขอพูดถึงไฟล์ `Package.json\_ ที่เป็นของ Project หลัก (Root ของ Project) สักเล็กน้อย
 
@@ -629,7 +629,7 @@ lerna success clean finished
 
 แต่ถ้าใช้ Yarn workspace ร่วมด้วยแล้ว คำสั่งที่ใช้จัดการจะเปลี่ยนไปเล็กน้อย ดังที่จะได้เห็นในหัวข้อถัดไป
 
-## เสริม: ใช้ Yarn Workspace ร่วมกับ Lerna เพื่อชีวิตที่ดีกว่า
+# เสริม: ใช้ Yarn Workspace ร่วมกับ Lerna เพื่อชีวิตที่ดีกว่า
 
 ![](/assets/image/post/intro-to-lerna/yarn.jpg)
 
@@ -709,7 +709,7 @@ Feature นี้จะให้โฟลเดอร์ `node_modules` จา�
 
 - **การติดตั้ง Common Package** — หากเราจะติดตั้ง Package ที่ Root ของ Project เราต้องใช้คำสั่ง `yarn add <package-name> -W` เพื่อให้ Yarn ยอมรับการติดตั้ง Package ที่ Root ของ Project (-W มีชื่อ Option เต็ม ๆ คือ--ignore-workspace-root-check)
 
-## สรุปและทิ้งท้าย
+# สรุปและทิ้งท้าย
 
 เราได้รู้จักกับ Lerna ที่เป็นเครื่องมือช่วยจัดการ Project ภายใน Project ไปแล้ว ในบล็อกนี้ได้แสดงวิธีการเริ่มต้น Project ใหม่ และการสร้าง Subproject ด้วย Lerna รวมไปถึงการใช้คำสั่งของ Lerna เพื่อติดตั้ง Package และรันคำสั่งต่าง ๆ ซึ่งคำสั่งที่ยกมามีดังนี้
 

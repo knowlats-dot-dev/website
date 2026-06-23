@@ -31,7 +31,7 @@
   }
 
   .header__logo {
-    @apply flex gap-2 items-center;
+    @apply flex gap-4 items-center;
   }
 
   .header__logo-img {
@@ -39,6 +39,6 @@
   }
 
   .header__title {
-    @apply text-2xl font-extrabold md:text-4xl text-theme-primary dark:text-theme-dark-secondary;
+    @apply font-display text-2xl md:text-4xl text-theme-primary dark:text-theme-dark-secondary;
   }
 </style>

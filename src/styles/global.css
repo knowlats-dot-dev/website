@@ -1,22 +1,45 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @plugin "@tailwindcss/forms";
 @plugin "@tailwindcss/typography";
 @config "../../tailwind.config.cjs";
 
+html {
+  @apply bg-theme-accent-gray-light;
+  header, footer {
+    @apply border-gray-300;
+  }
 
-@layer base {
-  html {
-    @apply bg-theme-accent-gray-light;
-    &.dark {
-      @apply text-gray-200 bg-theme-accent-gray-dark;
-      header,
-      footer {
-        @apply text-gray-400 border-gray-700;
-      }
+  &.dark {
+    @apply bg-theme-accent-gray-dark;
+    header,
+    footer {
+      @apply text-gray-400 border-gray-700;
     }
   }
 }
 
-body {
-  font-family: 'Bai Jamjuree', sans-serif;
+@theme {
+  --font-primary: var(--font-bai-jamjuree);
+  --font-display: var(--font-pixel);
+}
+
+.prose {
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  h3 {
+    @apply text-lg;
+  }
+
+  code {
+    @apply bg-gray-200 dark:bg-gray-600;
+  }
+
+  pre code {
+    background: transparent !important;
+    padding: 0 !important;
+  }
 }

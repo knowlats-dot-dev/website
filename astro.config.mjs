@@ -1,6 +1,6 @@
 import path, { dirname } from 'path'
 import { fileURLToPath } from 'url'
-import { defineConfig } from 'astro/config'
+import { defineConfig, fontProviders } from 'astro/config'
 
 import svelte from '@astrojs/svelte'
 import sitemap from '@astrojs/sitemap'
@@ -79,6 +79,23 @@ export default defineConfig(
       ]
     },
     adapter: vercel(),
-    prefetch: true
+    prefetch: true,
+    fonts: [
+      {
+        provider: fontProviders.fontsource(),
+        name: "Bai Jamjuree",
+        cssVariable: "--font-bai-jamjuree",
+        fallbacks: ["system-ui"],
+        subsets: ["latin", "thai"],
+        weights: [400, 500, 600, 700],
+      },
+      {
+        provider: fontProviders.fontsource(),
+        name: "Bitcount Prop Single",
+        cssVariable: "--font-pixel",
+        fallbacks: ["monospace"],
+        weights: [400],
+      },
+    ]
   }
 )

@@ -30,11 +30,11 @@
 <style lang="postcss">
   @reference "../styles/global.css";
   .nav-list {
-    @apply inline-flex list-none gap-6 text-xl font-semibold text-gray-500 py-2 flex-wrap;
+    @apply font-display text-xl inline-flex list-none gap-6 text-gray-500 py-2 flex-wrap;
   }
 
   .nav-item {
-    @apply pb-1 border-b-2 hover:border-dashed hover:border-gray-400 hover:dark:border-theme-dark-primary border-gray-300 dark:border-gray-700;
+    @apply pb-1 border-b-2 hover:border-dashed hover:border-gray-400 hover:dark:border-theme-dark-primary border-gray-300 dark:border-gray-600;
   }
 
   .nav-item-active {
