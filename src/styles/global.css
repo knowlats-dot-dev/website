@@ -5,8 +5,10 @@
 
 html {
   @apply bg-theme-accent-gray-light;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   header, footer {
     @apply border-gray-300;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   }
 
   &.dark {
