@@ -85,7 +85,7 @@ export default defineConfig(
         provider: fontProviders.fontsource(),
         name: "Bai Jamjuree",
         cssVariable: "--font-bai-jamjuree",
-        fallbacks: ["system-ui"],
+        fallbacks: ["sans-serif"],
         subsets: ["latin", "thai"],
         weights: [400, 500, 600, 700],
       },
