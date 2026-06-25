@@ -4,7 +4,6 @@ title: เริ่มต้นเป็นนักพัฒนาโปรแ�
 description: อยากเป็นนักพัฒนาโปรแกรม? เริ่มต้นยังไงดี? มาเรียนรู้ผ่านบทความนี้กัน พร้อมให้เข้าใจแนวทางการฝึกเบื้องต้น
 date: 2024-09-07T17:00:00.000Z
 image: /assets/image/post/how-to-be-a-software-developer/heading.jpg
-draft: true
 tags:
   - note
   - career

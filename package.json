@@ -5,7 +5,6 @@
   "type": "module",
   "scripts": {
     "build": "astro build",
-    "postbuild": "node ./scripts/search/prepare-index.js",
     "check": "astro check",
     "dev": "astro dev",
     "lint": "prettier --write  --plugin-search-dir=. \"**/*.{js,jsx,ts,tsx,md,mdx,astro,svelte,less}\" && eslint --fix \"src/**/*.{js,ts,jsx,tsx,astro}\"",
@@ -13,7 +12,8 @@
   },
   "dependencies": {
     "dayjs": "^1.11.21",
-    "lunr": "^2.3.9"
+    "lunr": "^2.3.9",
+    "lunr-languages": "^1.20.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
@@ -26,6 +26,7 @@
     "@tailwindcss/forms": "^0.5.11",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.3.0",
+    "@types/lunr": "^2.3.7",
     "@types/node": "^22.19.19",
     "@typescript-eslint/parser": "^5.62.0",
     "astro": "^6.4.2",
@@ -34,8 +35,6 @@
     "eslint-plugin-astro": "^0.26.2",
     "eslint-plugin-html": "^7.1.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
-    "globby": "^13.2.2",
-    "gray-matter": "^4.0.3",
     "mdx": "^0.3.1",
     "prettier": "^3.8.3",
     "prettier-config-standard": "^7.0.0",
