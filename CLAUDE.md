@@ -40,6 +40,7 @@ No test suite exists.
 ### State management (Svelte stores)
 
 All shared client-side state lives in `src/store/`:
+
 - `theme.ts` — `'dark' | 'light'` writable, consumed by `ModeSwitcher.svelte`; dark mode applied via `.dark` class on `<html>`
 - `search.ts` — `isSearchVisible` boolean controlling the search modal
 - `mobile-navbar.ts` — mobile menu open/close state
@@ -60,6 +61,7 @@ Drafts have their own pages at `src/pages/drafts/` and layout at `src/layouts/po
 ### Routing
 
 Pages in `src/pages/` follow Astro file-based routing:
+
 - `/` → `index.astro`
 - `/posts/[slug]` → fetches a single blog entry via `getEntry('blog', slug)`
 - `/tags/[tag]/[page]` → paginated tag listings
@@ -70,6 +72,7 @@ The layout chain: `src/layouts/post.astro` wraps `src/components/MainLayout.astr
 ### Styling
 
 Tailwind v4 with two config files:
+
 - `tailwind.theme.config.cjs` — color palette (red-based: `theme-primary`, `theme-secondary`, `theme-dark-primary`, etc.; backgrounds: `theme-accent-gray-light`/`dark`)
 - `tailwind.config.cjs` — extends theme with those colors, typography plugin dark variant, `darkMode: 'class'`
 
@@ -80,6 +83,7 @@ Custom CSS in `src/styles/global.css` sets `--font-primary` (Bai Jamjuree) and `
 Full-text search uses [lunr](https://lunrjs.com/) with Thai language support via [lunr-languages](https://github.com/MihaiValentin/lunr-languages). The search index at `/search-index.json` is generated as a prerendered Astro endpoint at `src/pages/search-index.json.ts` using `getCollection('blog')` — no postbuild script needed.
 
 The client-side search logic lives in `src/components/Search.svelte`. On mount it:
+
 1. Registers the lunr Thai tokeniser (`lunr-languages/lunr.th`) for character-level n-gram matching
 2. Fetches `/search-index.json` and builds a lunr index with `multiLanguage('en', 'th')`
 3. Searches with a trailing `*` wildcard for prefix matching
@@ -87,6 +91,7 @@ The client-side search logic lives in `src/components/Search.svelte`. On mount i
 ### Site configuration
 
 `src/config.ts` is the single source of truth for:
+
 - `SITE` — name, URL, author info, social links, OG image
 - `NAV_ITEMS` — navigation links
 - Feature flags: `USE_POST_IMG_OVERLAY`, `USE_MEDIA_THUMBNAIL`, `USE_AUTHOR_CARD`, `listDrafts`

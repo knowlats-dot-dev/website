@@ -8,11 +8,19 @@
 <ModeSwitcher let:theme>
   <span class="icon-wrapper">
     {#if theme === 'dark'}
-      <span in:fade={{ duration: 200 }} out:fade={{ duration: 200 }} class="icon">
+      <span
+        in:fade={{ duration: 200 }}
+        out:fade={{ duration: 200 }}
+        class="icon"
+      >
         <SunIcon />
       </span>
     {:else}
-      <span in:fade={{ duration: 200 }} out:fade={{ duration: 200 }} class="icon">
+      <span
+        in:fade={{ duration: 200 }}
+        out:fade={{ duration: 200 }}
+        class="icon"
+      >
         <MoonIcon />
       </span>
     {/if}

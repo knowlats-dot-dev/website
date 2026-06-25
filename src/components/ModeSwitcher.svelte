@@ -15,7 +15,10 @@
   }
 
   function applyTheme(t: ThemeType) {
-    window.document.documentElement.classList.toggle(THEME_DARK, t === THEME_DARK)
+    window.document.documentElement.classList.toggle(
+      THEME_DARK,
+      t === THEME_DARK
+    )
     currTheme = t
     theme.set(t)
   }
