@@ -11,6 +11,7 @@
     "preview": "astro preview"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "dayjs": "^1.11.21",
     "lunr": "^2.3.9",
     "lunr-languages": "^1.20.0"
