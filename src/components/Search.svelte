@@ -1,7 +1,9 @@
 <script lang="ts">
   import { onMount } from 'svelte'
+  import lunr from 'lunr'
   import SearchIcon from './icons/SearchIcon.svelte'
   import PostSearchPreview from './PostSearchPreview.svelte'
+
   type SearchDoc = {
     id: string
     slug?: string
@@ -12,55 +14,62 @@
     body?: string
   }
 
-  let searchInput
-  let searchableDocs: SearchDoc[] = []
-  let searchIndex
+  let searchInput: HTMLInputElement
+  let docsById: Record<string, SearchDoc> = {}
+  let idx: lunr.Index | null = null
 
   let searchQuery = ''
   let searchResults: SearchDoc[] = []
 
   onMount(async () => {
-    const lunr = (await import('lunr')).default
-    const resp = await fetch('/search-index.json')
-    const docs = await resp.json()
-    searchableDocs = docs.map(
-      (doc: Omit<SearchDoc, 'id'> & { id?: string }) => ({
-        ...doc,
-        id: doc.id ?? doc.slug ?? ''
-      })
-    )
-    // Initialize indexing
-    searchIndex = lunr(function () {
-      // the match key...
+    const [stemmer, multi, wordcut, thai] = await Promise.all([
+      import('lunr-languages/lunr.stemmer.support'),
+      import('lunr-languages/lunr.multi'),
+      import('lunr-languages/wordcut'),
+      import('lunr-languages/lunr.th')
+    ])
+    stemmer.default(lunr)
+    multi.default(lunr)
+    ;(lunr as any).wordcut = wordcut.default
+    thai.default(lunr)
+
+    // lunr.th.tokenizer returns plain strings on the segmenter path, but lunr 2.x
+    // requires Token objects — patch it to always wrap in lunr.Token
+    const origThTokenizer = (lunr as any).th.tokenizer
+    ;(lunr as any).th.tokenizer = (obj: any) => {
+      const tokens: any[] = origThTokenizer(obj)
+      return tokens.map((t: any) =>
+        t instanceof (lunr as any).Token ? t : new (lunr as any).Token(t)
+      )
+    }
+
+    const docs: SearchDoc[] = await (await fetch('/search-index.json')).json()
+    docsById = Object.fromEntries(docs.map((d) => [d.id, d]))
+
+    idx = lunr(function (this: lunr.Builder) {
+      this.use((lunr as any).multiLanguage('en', 'th'))
       this.ref('id')
-
-      // indexable properties
-      this.field('title')
-      this.field('description')
-      this.field('tags')
-
-      // Omit, if you don't want to search on `body`
+      this.field('title', { boost: 10 })
+      this.field('description', { boost: 5 })
+      this.field('tags', { boost: 3 })
       this.field('body')
-
-      // Index every document
-      searchableDocs.forEach((doc) => {
-        this.add(doc)
-      }, this)
+      docs.forEach((d) => this.add({ ...d, tags: d.tags?.join(' ') ?? '' }))
     })
+
     searchInput.focus()
   })
 
   $: {
-    if (searchQuery && searchQuery.length >= 3) {
-      const matches = searchIndex.search(searchQuery)
-      searchResults = []
-      matches.map((match) => {
-        searchableDocs.filter((doc) => {
-          if (match.ref === doc.id) {
-            searchResults.push(doc)
-          }
-        })
-      })
+    searchResults = []
+    if (idx && searchQuery.length >= 2) {
+      try {
+        searchResults = idx
+          .search(searchQuery + '*')
+          .map((r) => docsById[r.ref])
+          .filter(Boolean)
+      } catch {
+        // lunr throws QueryParseError on special characters
+      }
     }
   }
 </script>

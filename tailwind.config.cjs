@@ -33,17 +33,6 @@ module.exports = {
             strong: {
               color: theme('colors.gray.200')
             },
-            code: {
-              padding: theme('padding.1'),
-              color: theme('colors.gray.200'),
-              background: theme('colors.gray.600')
-            },
-            pre: {
-              code: {
-                padding: theme('padding.0'),
-                background: theme('colors.transparent')
-              }
-            },
             blockquote: {
               color: colors.dark.primary,
               borderColor: colors.primary
@@ -60,16 +49,6 @@ module.exports = {
               '&:hover': {
                 backgroundColor: 'none',
                 textDecoration: 'none'
-              }
-            },
-            code: {
-              padding: theme('padding.1'),
-              background: theme('colors.gray.200')
-            },
-            pre: {
-              code: {
-                padding: theme('padding.0'),
-                background: theme('colors.transparent')
               }
             },
             blockquote: {

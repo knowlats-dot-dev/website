@@ -12,6 +12,10 @@ export const NAV_ITEMS: NavItems = {
   tags: {
     path: '/tags',
     title: 'tags'
+  },
+  garden: {
+    path: 'https://garden.knowlats.dev',
+    title: 'Garden'
   }
 }
 
