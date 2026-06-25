@@ -18,7 +18,11 @@
 
 {#if $isSearchVisible}
   <!-- svelte-ignore a11y-no-static-element-interactions -->
-  <div class="modal__backdrop" on:click={dismissModal} on:keydown={handleEsc}></div>
+  <div
+    class="modal__backdrop"
+    on:click={dismissModal}
+    on:keydown={handleEsc}
+  ></div>
   <div class="modal">
     <div class="modal__cnt">
       <Search />

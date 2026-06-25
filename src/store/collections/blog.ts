@@ -12,6 +12,7 @@ export const blogCollection = defineCollection({
     date: z.date(),
     tags: z.array(z.string()),
     category: z.string(),
+    draft: z.boolean().optional().default(false),
     image: z.string().optional(),
     canonical_url: z.string().optional(),
     author: z.string().optional(),

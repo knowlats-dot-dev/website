@@ -12,7 +12,7 @@ tags:
   - schemaspy
 ---
 
-### Contents
+# Contents
 
 # Introduction
 

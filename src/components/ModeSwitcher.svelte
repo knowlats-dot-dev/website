@@ -9,29 +9,35 @@
   let currTheme: ThemeType = THEME_DARK
 
   function toggleTheme() {
-    window.document.documentElement.classList.toggle(THEME_DARK)
-    currTheme =
-      localStorage.getItem('theme') === THEME_DARK ? THEME_LIGHT : THEME_DARK
-    // Update Storage
-    localStorage.setItem('theme', currTheme)
-    // Update Store
-    theme.set(currTheme)
+    const next = currTheme === THEME_DARK ? THEME_LIGHT : THEME_DARK
+    localStorage.setItem('theme', next)
+    applyTheme(next)
+  }
+
+  function applyTheme(t: ThemeType) {
+    window.document.documentElement.classList.toggle(
+      THEME_DARK,
+      t === THEME_DARK
+    )
+    currTheme = t
+    theme.set(t)
   }
 
   onMount(() => {
-    if (
-      localStorage.getItem('theme') === THEME_DARK ||
-      (!('theme' in localStorage) &&
-        window.matchMedia(`(prefers-color-scheme: ${THEME_DARK})`).matches)
-    ) {
-      window.document.documentElement.classList.add(THEME_DARK)
-      currTheme = THEME_DARK
-    } else {
-      window.document.documentElement.classList.remove(THEME_DARK)
-      currTheme = THEME_LIGHT
+    const stored = localStorage.getItem('theme') as ThemeType | null
+    const mq = window.matchMedia(`(prefers-color-scheme: ${THEME_DARK})`)
+
+    const initial = stored ?? (mq.matches ? THEME_DARK : THEME_LIGHT)
+    if (!stored) localStorage.setItem('theme', initial)
+    applyTheme(initial)
+
+    const onOsChange = (e: MediaQueryListEvent) => {
+      if (!localStorage.getItem('theme')) {
+        applyTheme(e.matches ? THEME_DARK : THEME_LIGHT)
+      }
     }
-    // Update Store
-    theme.set(currTheme)
+    mq.addEventListener('change', onOsChange)
+    return () => mq.removeEventListener('change', onOsChange)
   })
 </script>
 
