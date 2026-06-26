@@ -1,9 +1,9 @@
 <script lang="ts">
   import HamburgerIcon from './icons/HamburgerIcon.svelte'
-  import { isOpenMobileNavbar } from '$/store/mobile-navbar'
+  import { isOpenMobileNavbar } from '$/store/mobile-navbar.svelte'
 
   const onClickMobileNavbarButton = () =>
-    isOpenMobileNavbar.set(!$isOpenMobileNavbar)
+    isOpenMobileNavbar.set(!isOpenMobileNavbar.value)
 </script>
 
 <button
@@ -11,5 +11,5 @@
   aria-label="Navbar"
   on:click={onClickMobileNavbarButton}
 >
-  <HamburgerIcon active={$isOpenMobileNavbar} />
+  <HamburgerIcon active={isOpenMobileNavbar.value} />
 </button>

@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { theme } from '$/store/theme'
+  import { theme } from '$/store/theme.svelte'
 </script>
 
-{#if $theme === 'dark'}
+{#if theme.value === 'dark'}
   <slot name="dark" />
 {:else}
   <slot name="light" />

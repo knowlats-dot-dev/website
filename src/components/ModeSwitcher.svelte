@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte'
-  import { theme } from '$/store/theme'
+  import { theme } from '$/store/theme.svelte'
 
   type ThemeType = 'dark' | 'light'
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { isSearchVisible } from '$/store/search'
+  import { isSearchVisible } from '$/store/search.svelte'
   import Search from './Search.svelte'
 
   const dismissModal = () => {
@@ -16,7 +16,7 @@
   }
 </script>
 
-{#if $isSearchVisible}
+{#if isSearchVisible.value}
   <!-- svelte-ignore a11y-no-static-element-interactions -->
   <div
     class="modal__backdrop"
