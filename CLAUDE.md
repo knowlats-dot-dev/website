@@ -37,14 +37,22 @@ No test suite exists.
 - **Astro components** (`src/components/*.astro`) — static/server-rendered UI (layouts, post previews, prose wrapper)
 - **Svelte components** (`src/components/*.svelte`) — any client-side interactivity: theme switching, search modal, mobile nav, navbar
 
-### State management (Svelte stores)
+### State management (Svelte 5 reactive stores)
 
-All shared client-side state lives in `src/store/`:
+All shared client-side state lives in `src/store/`. Stores use Svelte 5 `$state` in `.svelte.ts` files — **not** Svelte 4 `writable`. State is accessed via `.value` (read) and `.set(v)` (write), never with the `$store` auto-subscribe sigil.
 
-- `theme.ts` — `'dark' | 'light'` writable, consumed by `ModeSwitcher.svelte`; dark mode applied via `.dark` class on `<html>`
-- `search.ts` — `isSearchVisible` boolean controlling the search modal
-- `mobile-navbar.ts` — mobile menu open/close state
+- `theme.svelte.ts` — `'dark' | 'light'` state, consumed by `ModeSwitcher.svelte`; dark mode applied via `.dark` class on `<html>`
+- `search.svelte.ts` — `isSearchVisible` boolean controlling the search modal
+- `mobile-navbar.svelte.ts` — mobile menu open/close state
+- `bool.svelte.ts` — shared `createBooleanStore()` factory used by the two boolean stores above
 - `collections/blog.ts` — Astro content collection definition with Zod schema
+
+To add a new boolean store:
+```ts
+import { createBooleanStore } from '$/store/bool.svelte'
+export const isMyThing = createBooleanStore()
+// read: isMyThing.value  |  write: isMyThing.set(true)
+```
 
 ### Content
 

@@ -1,13 +1,11 @@
 <script lang="ts">
   import { NAV_ITEMS } from '$/config'
   import { toTitleCase } from '$/utils'
-  import { isOpenMobileNavbar } from '$/store/mobile-navbar'
+  import { isOpenMobileNavbar } from '$/store/mobile-navbar.svelte'
 
-  let mobileNavClass = 'mobile-nav hide'
-
-  $: {
-    mobileNavClass = $isOpenMobileNavbar ? 'mobile-nav show' : 'mobile-nav hide'
-  }
+  let mobileNavClass = $derived(
+    isOpenMobileNavbar.value ? 'mobile-nav show' : 'mobile-nav hide'
+  )
 </script>
 
 <nav class={mobileNavClass}>
