@@ -1,7 +1,7 @@
 <script lang="ts">
   import SearchIcon from './icons/SearchIcon.svelte'
-  import { isSearchVisible } from '$/store/search'
-  import { isOpenMobileNavbar } from '$/store/mobile-navbar'
+  import { isSearchVisible } from '$/store/search.svelte'
+  import { isOpenMobileNavbar } from '$/store/mobile-navbar.svelte'
 
   function showSearchDialog() {
     isSearchVisible.set(true)

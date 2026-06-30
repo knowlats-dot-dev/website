@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte'
-  import { theme } from '$/store/theme'
+  import { theme } from '$/store/theme.svelte'
 
   type ThemeType = 'dark' | 'light'
 
@@ -28,7 +28,6 @@
     const mq = window.matchMedia(`(prefers-color-scheme: ${THEME_DARK})`)
 
     const initial = stored ?? (mq.matches ? THEME_DARK : THEME_LIGHT)
-    if (!stored) localStorage.setItem('theme', initial)
     applyTheme(initial)
 
     const onOsChange = (e: MediaQueryListEvent) => {
