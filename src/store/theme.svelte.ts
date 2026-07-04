@@ -8,7 +8,7 @@ function createThemeStore() {
     },
     set(v: ThemeType) {
       val = v
-    },
+    }
   }
 }
 
