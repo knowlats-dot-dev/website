@@ -1,6 +1,7 @@
 ---
 import { Font } from 'astro:assets'
 import Analytics from '@vercel/analytics/astro'
+import SpeedInsights from '@vercel/speed-insights/astro'
 import { SITE } from '$/config'
 import '$/styles/global.css'
 
@@ -136,3 +137,4 @@ const { title = SITE.title, description, permalink, image } = Astro.props
 </script>
 
 <Analytics />
+<SpeedInsights />

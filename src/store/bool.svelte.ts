@@ -6,6 +6,6 @@ export function createBooleanStore(initial = false) {
     },
     set(v: boolean) {
       val = v
-    },
+    }
   }
 }
