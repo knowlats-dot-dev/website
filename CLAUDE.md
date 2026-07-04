@@ -48,6 +48,7 @@ All shared client-side state lives in `src/store/`. Stores use Svelte 5 `$state`
 - `collections/blog.ts` — Astro content collection definition with Zod schema
 
 To add a new boolean store:
+
 ```ts
 import { createBooleanStore } from '$/store/bool.svelte'
 export const isMyThing = createBooleanStore()
